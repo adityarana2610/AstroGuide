@@ -8,7 +8,7 @@ on demand.
 
 Existing astrology apps are either fully manual or purely LLM-hallucinated.
 AstroGuide bridges the gap: real ephemeris calculations (Swiss Ephemeris /
-Lahiri ayanamsa) wired as *tools* to a GPT-4o-mini agent, so every number in
+Lahiri ayanamsa) wired as *tools* to a Gemini 3.6 Flash agent, so every number in
 the report is computed, not generated.
 
 ## Quick Start
@@ -62,7 +62,7 @@ astroguide/
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `GOOGLE_API_KEY` | Yes | Google AI API key for Gemini 2.0 Flash |
+| `GOOGLE_API_KEY` | Yes | Google AI API key for Gemini 3.6 Flash (free tier) |
 
 ## How the Demo Works
 
