@@ -14,7 +14,7 @@ from src.tools import get_birth_chart, get_numbers_and_stones
 from src.schemas import ChartSummary
 
 # ── LLM ──────────────────────────────────────────────────────────────────────
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
+llm = ChatGoogleGenerativeAI(model="gemini-3.6-flash", temperature=0)
 
 # ── Agent with memory ────────────────────────────────────────────────────────
 memory = MemorySaver()
