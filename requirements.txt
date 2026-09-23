@@ -2,6 +2,6 @@ pyswisseph
 geopy
 timezonefinder
 langchain
-langchain-openai
+langchain-google-genai
 langgraph
 pydantic

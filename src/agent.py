@@ -3,10 +3,10 @@ agent.py — ReAct agent wired to AstroGuide tools, with conversation memory.
 
 Prerequisites
 -------------
-Set the ``OPENAI_API_KEY`` environment variable before importing this module.
+Set the ``GOOGLE_API_KEY`` environment variable before importing this module.
 """
 
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import MemorySaver
 
@@ -14,7 +14,7 @@ from src.tools import get_birth_chart, get_numbers_and_stones
 from src.schemas import ChartSummary
 
 # ── LLM ──────────────────────────────────────────────────────────────────────
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
 
 # ── Agent with memory ────────────────────────────────────────────────────────
 memory = MemorySaver()
@@ -53,3 +53,4 @@ def parse_chart_summary(question: str) -> ChartSummary:
     """
     structured_llm = llm.with_structured_output(ChartSummary)
     return structured_llm.invoke(question)
+

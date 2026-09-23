@@ -19,10 +19,10 @@ git clone https://github.com/adityarana2610/AstroGuide.git
 cd AstroGuide
 pip install -r requirements.txt
 
-# 2. Set your OpenAI API key (never commit this)
-export OPENAI_API_KEY="sk-..."        # Linux / macOS
-set OPENAI_API_KEY=sk-...             # Windows CMD
-$env:OPENAI_API_KEY="sk-..."          # PowerShell
+# 2. Set your Google API key (never commit this)
+export GOOGLE_API_KEY="..."            # Linux / macOS
+set GOOGLE_API_KEY=...                 # Windows CMD
+$env:GOOGLE_API_KEY="..."              # PowerShell
 
 # 3. Run the demo notebook
 jupyter notebook notebooks/phase2_demo.ipynb
@@ -62,7 +62,7 @@ astroguide/
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `OPENAI_API_KEY` | Yes | OpenAI API key for GPT-4o-mini |
+| `GOOGLE_API_KEY` | Yes | Google AI API key for Gemini 2.0 Flash |
 
 ## How the Demo Works
 
