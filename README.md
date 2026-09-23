@@ -77,10 +77,12 @@ astroguide/
 ## Data Sources & Conventions
 
 - **Ephemeris**: Swiss Ephemeris (`pyswisseph`), sidereal mode, Lahiri ayanamsa.
-- **Numerology**: Chaldean letter-value system (no 9 assigned to letters).
-- **Planet map**: `data/planet_map.json` — sourced from standard Vedic
-  astrology and Chaldean numerology references. **Verify against a second
-  source before relying on these values.**
+- **Numerology**: Chaldean letter-value system (no 9 assigned to letters;
+  however the digit 9 can still appear as a final reduced number, ruled by Mars).
+- **Planet map**: `data/planet_map.json` — verified against the following sources:
+  - **Gemstones**: [GemPundit — "Know your Gemstone According to Vedic Astrology"](https://gempundit.com/blog/gemstones-of-vedic-astrology) (all 9 Navaratna stones confirmed).
+  - **Number-to-planet**: [Dr. J C Chaudhry — Chaldean Numerology Chart](https://jcchaudhry.com/chaldean-numerology-chart). Numbers 4 and 7 use the **Vedic convention** (Rahu/Ketu) instead of the Western outer planets (Uranus/Neptune).
+  - **Colours & days**: Vedic Color Therapy / Navagraha associations (standard references).
 
 ## License
 
