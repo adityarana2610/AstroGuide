@@ -1,0 +1,11 @@
+{
+  "Sun":     {"number": 1, "stone": "Ruby",            "colour": "Red",    "day": "Sunday"},
+  "Moon":    {"number": 2, "stone": "Pearl",            "colour": "White",  "day": "Monday"},
+  "Jupiter": {"number": 3, "stone": "Yellow Sapphire",  "colour": "Yellow", "day": "Thursday"},
+  "Rahu":    {"number": 4, "stone": "Hessonite",        "colour": "Smoky",  "day": "Saturday"},
+  "Mercury": {"number": 5, "stone": "Emerald",          "colour": "Green",  "day": "Wednesday"},
+  "Venus":   {"number": 6, "stone": "Diamond",          "colour": "White",  "day": "Friday"},
+  "Ketu":    {"number": 7, "stone": "Cat's Eye",        "colour": "Grey",   "day": "Tuesday"},
+  "Saturn":  {"number": 8, "stone": "Blue Sapphire",    "colour": "Blue",   "day": "Saturday"},
+  "Mars":    {"number": 9, "stone": "Red Coral",         "colour": "Red",    "day": "Tuesday"}
+}
