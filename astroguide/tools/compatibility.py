@@ -153,11 +153,12 @@ def match_compatibility(person1_moon_nakshatra: int, person1_moon_pada: int, per
     
     if y1_animal == y2_animal:
         yoni_score = 3.0 if y1_gender == y2_gender else 4.0
-    elif YONI_ENEMIES.get(y1_animal) == y2_animal:
+    elif YONI_ENEMIES.get(y1_animal) == y2_animal or YONI_ENEMIES.get(y2_animal) == y1_animal:
+        # Check both directions to fix asymmetry bug: (A,B) and (B,A) must score identically
         yoni_score = 0.0
     else:
-        # Simplified: fallback to neutral
-        yoni_score = 1.0
+        # Friendly or neutral yoni pairing
+        yoni_score = 2.0
         
     kootas.append({
         "name": "Yoni", 
