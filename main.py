@@ -16,12 +16,12 @@ logger = logging.getLogger("CRAG-Main")
 # Add current directory to path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-from pipeline.config import PipelineConfig
-from pipeline.ingestor import DoclingJSONIngestor
-from pipeline.retriever import HybridRetriever
-from pipeline.bandit_policy import LinUCBBanditPolicy
-from pipeline.external_search import ExternalSearchTool
-from pipeline.agent import SelfHealingRAGAgent
+from astroguide.rag.pipeline.config import PipelineConfig
+from astroguide.rag.pipeline.ingestor import DoclingJSONIngestor
+from astroguide.rag.pipeline.retriever import HybridRetriever
+from astroguide.rag.pipeline.bandit_policy import LinUCBBanditPolicy
+from astroguide.rag.pipeline.external_search import ExternalSearchTool
+from astroguide.rag.pipeline.agent import SelfHealingRAGAgent
 
 def create_sample_docling_document() -> dict:
     """

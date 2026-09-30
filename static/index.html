@@ -26,6 +26,8 @@
                 <button class="nav-btn" data-target="find-dates">📅 Find Dates</button>
                 <button class="nav-btn" data-target="daily-transits">🌍 Daily Transits</button>
                 <button class="nav-btn" data-target="compatibility">❤️ Compatibility</button>
+                <button class="nav-btn" data-target="profile">◉ My Profile</button>
+                <button class="nav-btn" data-target="rag-chat">✦ Ask AstroGuide</button>
             </nav>
         </aside>
 
@@ -162,6 +164,54 @@
                         </div>
                     </div>
                     <button type="submit" class="submit-btn">Check Match</button>
+                </form>
+            </div>
+
+            <!-- Profile and saved chart history -->
+            <div id="profile" class="tool-section">
+                <h3>My Profile</h3>
+                <p class="section-intro">Keep your personal details and generated charts available to AstroGuide.</p>
+                <form class="tool-form" id="form-profile">
+                    <div class="input-group">
+                        <label for="profile-name">Name</label>
+                        <input id="profile-name" type="text" name="display_name" maxlength="120" placeholder="Your name">
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label for="profile-date">Birth date</label>
+                            <input id="profile-date" type="date" name="birth_date">
+                        </div>
+                        <div class="input-group">
+                            <label for="profile-time">Birth time</label>
+                            <input id="profile-time" type="time" name="birth_time">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="profile-location">Birth location</label>
+                        <input id="profile-location" type="text" name="birth_location" maxlength="200" placeholder="City, country">
+                    </div>
+                    <div class="input-group">
+                        <label for="profile-notes">Personal astrology notes</label>
+                        <textarea id="profile-notes" name="notes" rows="5" maxlength="5000" placeholder="Questions, preferences, or context to use with RAG"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Save profile</button>
+                </form>
+                <div id="chart-history" class="chart-history">
+                    <h4>Saved charts and tool results</h4>
+                    <div class="placeholder-text">Generated results will appear here automatically.</div>
+                </div>
+            </div>
+
+            <!-- RAG Chat -->
+            <div id="rag-chat" class="tool-section">
+                <h3>Ask AstroGuide</h3>
+                <p class="section-intro">Search the indexed astrology guidance and get an answer grounded in retrieved sources.</p>
+                <form class="tool-form" id="form-rag">
+                    <div class="input-group">
+                        <label for="rag-query">Your question</label>
+                        <textarea id="rag-query" name="query" rows="5" maxlength="2000" placeholder="What does my Moon nakshatra represent?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Ask the knowledge base</button>
                 </form>
             </div>
 

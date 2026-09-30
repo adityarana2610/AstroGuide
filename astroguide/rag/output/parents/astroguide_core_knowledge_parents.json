@@ -1,0 +1,32 @@
+{
+  "astroguide_core_knowledge_parent_000_00": {
+    "parent_id": "astroguide_core_knowledge_parent_000_00",
+    "section_title": "AstroGuide knowledge base",
+    "text": "AstroGuide knowledge base\n\nVedic astrology uses the sidereal zodiac and commonly interprets a birth chart through planets, signs, houses, nakshatras, and dashas. A chart is a symbolic framework for reflection; it should not replace medical, legal, financial, or mental-health advice.\nThe Moon sign describes the sign occupied by the Moon at birth and is often used to discuss emotional patterns, habits, and day-to-day responses. The Moon nakshatra is the lunar mansion occupied by the Moon. There are 27 nakshatras, each divided into four padas.\nGochara, or transit analysis, compares current planetary positions with a natal reference such as the Moon sign. Transit guidance is interpretive and depends on the full chart, timing, and the chosen tradition.",
+    "child_ids": [
+      "astroguide_core_knowledge_child_000_00_000_80fe87",
+      "astroguide_core_knowledge_child_000_00_001_2f7775",
+      "astroguide_core_knowledge_child_000_00_002_df16dc"
+    ],
+    "node_ref": "#/texts/0"
+  },
+  "astroguide_core_knowledge_parent_000_01": {
+    "parent_id": "astroguide_core_knowledge_parent_000_01",
+    "section_title": "AstroGuide knowledge base",
+    "text": "AstroGuide knowledge base\n\nAshtakoota or Guna Milan is a traditional compatibility framework scored out of 36 points. It compares factors including Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, and Nadi. The score is one interpretive input and should be discussed alongside communication, consent, values, and lived compatibility.\nNumerology and gemstone suggestions in AstroGuide are cultural and reflective tools. They are not guarantees of outcomes. Users should verify gemstone quality and consult an appropriately qualified professional before making health or financial decisions.",
+    "child_ids": [
+      "astroguide_core_knowledge_child_000_01_000_faa685",
+      "astroguide_core_knowledge_child_000_01_001_84c346"
+    ],
+    "node_ref": "#/texts/0"
+  },
+  "astroguide_core_knowledge_parent_pic_30d34d6e": {
+    "parent_id": "astroguide_core_knowledge_parent_pic_30d34d6e",
+    "section_title": "Figure",
+    "text": "[Multimodal Vision Analysis] Architectural illustration depicting: 'Document Visual Diagram'. Features components, telemetry interconnects, and structural relationships. Annotations: Architecture Component, Flowchart Diagram.",
+    "child_ids": [
+      "astroguide_core_knowledge_child_pic_953639bf"
+    ],
+    "node_ref": "#/node/0"
+  }
+}

@@ -192,6 +192,12 @@ body {
     font-weight: 800;
 }
 
+.section-intro {
+    color: var(--text-muted);
+    margin: -12px 0 24px;
+    line-height: 1.6;
+}
+
 /* Forms */
 .tool-form {
     display: flex;
@@ -230,6 +236,24 @@ input, select {
 }
 
 input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
@@ -299,6 +323,76 @@ input:focus, select:focus {
     font-size: 0.9rem;
     color: #a78bfa;
     white-space: pre-wrap;
+}
+
+.rag-answer {
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.rag-meta {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin-top: 20px;
+}
+
+.rag-sources {
+    margin-top: 20px;
+    color: var(--text-muted);
+}
+
+.rag-sources summary {
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.rag-sources ul {
+    margin: 12px 0 0 20px;
+    line-height: 1.6;
+}
+
+.chart-history {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.chart-history h4 {
+    margin-bottom: 16px;
+}
+
+.history-list {
+    display: grid;
+    gap: 12px;
+}
+
+.history-item {
+    padding: 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.history-item time {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    margin-top: 4px;
+}
+
+.history-item pre {
+    margin-top: 12px;
+    max-height: 180px;
+    overflow: auto;
+    color: var(--text-muted);
+    white-space: pre-wrap;
+    font-size: 0.78rem;
+}
+
+.profile-save-note {
+    color: var(--text-muted);
+    margin-top: 8px;
 }
 
 .svg-container {
