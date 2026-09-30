@@ -8,12 +8,12 @@ try:
 except (ImportError, ModuleNotFoundError):
     from astroguide.tools._decorator import tool
 
-# Load Nakshatra table at module level
-NAKSHATRA_FILE = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables', 'nakshatra_table.json')
-with open(NAKSHATRA_FILE, 'r', encoding='utf-8') as f:
-    _nakshatra_data = json.load(f)
-NAKSHATRA_TABLE = _nakshatra_data.get("nakshatras", [])
+from astroguide.utils.data_loader import load_nakshatras
+
+# Load Nakshatra table via centralized cached data loader
+NAKSHATRA_TABLE = load_nakshatras()
 NAKSHATRA_NAMES = [n["name"] for n in NAKSHATRA_TABLE]
+
 
 RASHI_NAMES = [
     "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",

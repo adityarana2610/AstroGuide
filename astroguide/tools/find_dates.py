@@ -8,7 +8,10 @@ except (ImportError, ModuleNotFoundError):
     from astroguide.tools._decorator import tool
 
 RASHI_NAMES = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
-NAKSHATRA_NAMES = [
+from astroguide.utils.data_loader import load_panchang_reference
+
+# Fallback default constants for high-availability offline operation
+_DEFAULT_NAKSHATRAS = [
     "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", 
     "Punarvasu", "Pushya", "Ashlesha", "Magha", "Purva Phalguni", 
     "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha", 
@@ -16,8 +19,8 @@ NAKSHATRA_NAMES = [
     "Shravana", "Dhanishta", "Shatabhisha", "Purva Bhadrapada", 
     "Uttara Bhadrapada", "Revati"
 ]
-TARA_NAMES = ["Janma", "Sampat", "Vipat", "Kshema", "Pratyari", "Sadhaka", "Vadha", "Mitra", "Ati-Mitra"]
-TITHI_NAMES = [
+_DEFAULT_TARAS = ["Janma", "Sampat", "Vipat", "Kshema", "Pratyari", "Sadhaka", "Vadha", "Mitra", "Ati-Mitra"]
+_DEFAULT_TITHIS = [
     "Pratipada", "Dwitiya", "Tritiya", "Chaturthi", "Panchami", 
     "Shashthi", "Saptami", "Ashtami", "Navami", "Dashami", 
     "Ekadashi", "Dwadashi", "Trayodashi", "Chaturdashi", "Purnima", 
@@ -25,33 +28,51 @@ TITHI_NAMES = [
     "Shashthi", "Saptami", "Ashtami", "Navami", "Dashami", 
     "Ekadashi", "Dwadashi", "Trayodashi", "Chaturdashi", "Amavasya"
 ]
+_DEFAULT_SHUBH = {2, 3, 5, 7, 10, 11, 13, 15, 17, 18, 20, 22, 25, 26, 28}
+_DEFAULT_ASHUBH = {4, 8, 9, 14, 19, 23, 24, 29, 30}
 
-SHUBH_TITHIS = {2, 3, 5, 7, 10, 11, 13, 15, 17, 18, 20, 22, 25, 26, 28}
-ASHUBH_TITHIS = {4, 8, 9, 14, 19, 23, 24, 29, 30}
+# Load externalized panchang reference data with defensive fallback
+_panchang_ref = load_panchang_reference()
 
-AUSPICIOUS_ACTIONS = [
+NAKSHATRA_NAMES = _panchang_ref.get("nakshatra_names", _DEFAULT_NAKSHATRAS)
+
+if _panchang_ref.get("taras"):
+    TARA_NAMES = [t["name"] for t in _panchang_ref["taras"]]
+else:
+    TARA_NAMES = _DEFAULT_TARAS
+
+if _panchang_ref.get("tithis"):
+    TITHI_NAMES = [t["name"] for t in _panchang_ref["tithis"]]
+    SHUBH_TITHIS = {t["number"] for t in _panchang_ref["tithis"] if t.get("is_shubh")}
+    ASHUBH_TITHIS = {t["number"] for t in _panchang_ref["tithis"] if not t.get("is_shubh")}
+else:
+    TITHI_NAMES = _DEFAULT_TITHIS
+    SHUBH_TITHIS = _DEFAULT_SHUBH
+    ASHUBH_TITHIS = _DEFAULT_ASHUBH
+
+_brackets = _panchang_ref.get("muhurtha_actions", {}).get("composite_brackets", {})
+AUSPICIOUS_ACTIONS = _brackets.get("highly_auspicious", {}).get("action_templates", [
     "An excellent day for new beginnings and important decisions.",
     "Ideal for initiating long-term projects and signing contracts.",
     "A wonderful time for celebrations and significant purchases.",
     "Great for starting new educational pursuits or investments.",
     "Favorable for important meetings and spiritual practices."
-]
-
-NEUTRAL_ACTIONS = [
+])
+NEUTRAL_ACTIONS = _brackets.get("neutral", {}).get("action_templates", [
     "A good day for routine tasks and personal reflection.",
     "Focus on maintaining current projects and steady progress.",
     "Ideal for organizing, planning, and consolidating resources.",
     "Favorable for catching up on administrative work.",
     "A suitable day for quiet work and attending to details."
-]
-
-INAUSPICIOUS_ACTIONS = [
+])
+INAUSPICIOUS_ACTIONS = _brackets.get("inauspicious_avoid", {}).get("action_templates", [
     "Focus on completing ongoing projects and nurturing relationships.",
     "Best to avoid major new initiatives today.",
     "A day for reflection, meditation, and finishing pending tasks.",
     "Exercise caution in financial dealings and travel.",
     "Keep a low profile and avoid aggressive moves."
-]
+])
+
 
 @tool
 def find_dates(natal_moon_sign: int, natal_nakshatra: int, start_date: str, end_date: str, latitude: float, longitude: float, tz_offset: float) -> Dict[str, Any]:

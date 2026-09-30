@@ -8,15 +8,12 @@ try:
 except (ImportError, ModuleNotFoundError):
     from astroguide.tools._decorator import tool
 
-# Load the lookup table at module level
-DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables')
-LOOKUP_FILE = os.path.join(DATA_DIR, 'planet_stone_colour.json')
+from astroguide.utils.data_loader import load_planet_stones, load_remedies, get_remedy_for_planet
 
-try:
-    with open(LOOKUP_FILE, 'r', encoding='utf-8') as f:
-        PLANET_DATA = json.load(f)
-except FileNotFoundError:
-    PLANET_DATA = {}
+# Load planet stone mappings and remedies via centralized cached data loader
+PLANET_DATA = load_planet_stones()
+REMEDIES_DATA = load_remedies()
+
 
 def reduce_to_single_digit(n: int) -> int:
     """Reduces a number to a single digit by summing its digits repeatedly."""
@@ -79,7 +76,12 @@ def get_numbers_and_stones(birth_date: str) -> Dict[str, Any]:
     friendly_planets = list(set(driver_info.get("friendly_planets", []) + conductor_info.get("friendly_planets", [])))
     unfriendly_planets = list(set(driver_info.get("unfriendly_planets", []) + conductor_info.get("unfriendly_planets", [])))
     
-    return {
+    # Enrich with comprehensive astrological remedies if available (Feature F1)
+    remedies_dict = REMEDIES_DATA.get("remedies", REMEDIES_DATA) if isinstance(REMEDIES_DATA, dict) else {}
+    driver_remedy = remedies_dict.get(driver_planet)
+    conductor_remedy = remedies_dict.get(conductor_planet)
+
+    response = {
         "birth_date": birth_date,
         "driver_number": driver_number,
         "driver_planet": driver_planet,
@@ -92,3 +94,29 @@ def get_numbers_and_stones(birth_date: str) -> Dict[str, Any]:
         "friendly_planets": sorted(friendly_planets),
         "unfriendly_planets": sorted(unfriendly_planets)
     }
+    if driver_remedy:
+        response["driver_remedy"] = driver_remedy
+        response["driver_remedies"] = driver_remedy
+    if conductor_remedy:
+        response["conductor_remedy"] = conductor_remedy
+        response["conductor_remedies"] = conductor_remedy
+
+    return response
+
+
+@tool
+def get_astrological_remedy(planet_name: str) -> Dict[str, Any]:
+    """
+    Retrieves classical Vedic remedies, gemstones, mantras, and lifestyle actions for a given planet.
+    
+    Args:
+        planet_name: Name of the planet (e.g., 'Sun', 'Saturn', 'Jupiter', 'Rahu').
+        
+    Returns:
+        Dictionary containing remedy specifications for the planet.
+    """
+    rem = get_remedy_for_planet(planet_name)
+    if not rem:
+        return {"error": f"No remedies found for planet '{planet_name}'"}
+    return rem
+

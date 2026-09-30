@@ -142,31 +142,29 @@ def test_iss_02_server_error_response_wrapping():
                                      person2_moon_nakshatra=0, person2_moon_pada=1)
     assert "error" in compat_res
 
-    # Optionally, if TestClient can be imported (when httpx is installed), test via TestClient too
-    try:
-        from starlette.testclient import TestClient
-        client = TestClient(server.app)
+    # Verify via HTTP TestClient
+    from starlette.testclient import TestClient
+    client = TestClient(server.app)
 
-        resp1 = client.post("/api/birth_chart", json={
-            "birth_date": "invalid-date",
-            "birth_time": "12:00",
-            "latitude": 28.6139,
-            "longitude": 77.2090,
-            "tz_offset": 5.5,
-            "chart_style": "north"
-        })
-        assert resp1.status_code == 200
-        d1 = resp1.json()
-        assert d1.get("success") is False
-        assert "error" in d1
+    resp1 = client.post("/api/birth_chart", json={
+        "birth_date": "invalid-date",
+        "birth_time": "12:00",
+        "latitude": 28.6139,
+        "longitude": 77.2090,
+        "tz_offset": 5.5,
+        "chart_style": "north"
+    })
+    assert resp1.status_code == 200
+    d1 = resp1.json()
+    assert d1.get("success") is False
+    assert "error" in d1
 
-        resp2 = client.post("/api/numbers_stones", json={"birth_date": "bad-date"})
-        assert resp2.status_code == 200
-        d2 = resp2.json()
-        assert d2.get("success") is False
-        assert "error" in d2
-    except Exception:
-        pass
+    resp2 = client.post("/api/numbers_stones", json={"birth_date": "bad-date"})
+    assert resp2.status_code == 200
+    d2 = resp2.json()
+    assert d2.get("success") is False
+    assert "error" in d2
+
 
 
 

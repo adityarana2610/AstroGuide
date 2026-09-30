@@ -175,6 +175,11 @@ def get_rag_agent():
 def read_root():
     return FileResponse(os.path.join(static_dir, "index.html"))
 
+@app.get("/health")
+def health_check():
+    """Health check endpoint — returns 200 OK with service status."""
+    return {"status": "ok", "service": "AstroGuide Tools API", "version": "1.0.0"}
+
 class BirthChartRequest(BaseModel):
     birth_date: str
     birth_time: str
