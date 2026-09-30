@@ -1,11 +1,11 @@
 {
-  "1": { "planet": "Sun", "gemstone": "Ruby", "colour": "Gold/Orange", "friendly_planets": ["Moon", "Mars", "Jupiter"], "unfriendly_planets": ["Saturn", "Venus"] },
-  "2": { "planet": "Moon", "gemstone": "Pearl", "colour": "White/Silver", "friendly_planets": ["Sun", "Mercury"], "unfriendly_planets": ["Rahu", "Ketu"] },
-  "3": { "planet": "Jupiter", "gemstone": "Yellow Sapphire", "colour": "Yellow", "friendly_planets": ["Sun", "Moon", "Mars"], "unfriendly_planets": ["Mercury", "Venus"] },
-  "4": { "planet": "Rahu", "gemstone": "Hessonite (Gomed)", "colour": "Blue", "friendly_planets": ["Jupiter", "Venus", "Saturn"], "unfriendly_planets": ["Sun", "Moon", "Mars"] },
-  "5": { "planet": "Mercury", "gemstone": "Emerald", "colour": "Green", "friendly_planets": ["Sun", "Venus"], "unfriendly_planets": ["Moon"] },
-  "6": { "planet": "Venus", "gemstone": "Diamond", "colour": "White/Pink", "friendly_planets": ["Mercury", "Saturn"], "unfriendly_planets": ["Sun", "Moon"] },
-  "7": { "planet": "Ketu", "gemstone": "Cat's Eye (Lehsunia)", "colour": "Grey/Smoky", "friendly_planets": ["Mars", "Venus", "Saturn"], "unfriendly_planets": ["Sun", "Moon"] },
-  "8": { "planet": "Saturn", "gemstone": "Blue Sapphire", "colour": "Black/Dark Blue", "friendly_planets": ["Mercury", "Venus"], "unfriendly_planets": ["Sun", "Moon", "Mars"] },
-  "9": { "planet": "Mars", "gemstone": "Red Coral", "colour": "Red", "friendly_planets": ["Sun", "Moon", "Jupiter"], "unfriendly_planets": ["Mercury"] }
+  "1": { "planet": "Sun", "gemstone": "Ruby", "colour": "Gold/Orange", "friendly_planets": ["Moon", "Mars", "Jupiter"], "unfriendly_planets": ["Saturn", "Venus"], "friendly_numbers": [1, 2, 3, 4, 7, 9] },
+  "2": { "planet": "Moon", "gemstone": "Pearl", "colour": "White/Silver", "friendly_planets": ["Sun", "Mercury"], "unfriendly_planets": ["Rahu", "Ketu"], "friendly_numbers": [1, 2, 4, 7] },
+  "3": { "planet": "Jupiter", "gemstone": "Yellow Sapphire", "colour": "Yellow", "friendly_planets": ["Sun", "Moon", "Mars"], "unfriendly_planets": ["Mercury", "Venus"], "friendly_numbers": [1, 2, 3, 9] },
+  "4": { "planet": "Rahu", "gemstone": "Hessonite (Gomed)", "colour": "Blue", "friendly_planets": ["Jupiter", "Venus", "Saturn"], "unfriendly_planets": ["Sun", "Moon", "Mars"], "friendly_numbers": [1, 2, 4, 7, 8] },
+  "5": { "planet": "Mercury", "gemstone": "Emerald", "colour": "Green", "friendly_planets": ["Sun", "Venus"], "unfriendly_planets": ["Moon"], "friendly_numbers": [1, 5, 6] },
+  "6": { "planet": "Venus", "gemstone": "Diamond", "colour": "White/Pink", "friendly_planets": ["Mercury", "Saturn"], "unfriendly_planets": ["Sun", "Moon"], "friendly_numbers": [5, 6, 8] },
+  "7": { "planet": "Ketu", "gemstone": "Cat's Eye (Lehsunia)", "colour": "Grey/Smoky", "friendly_planets": ["Mars", "Venus", "Saturn"], "unfriendly_planets": ["Sun", "Moon"], "friendly_numbers": [1, 2, 4, 7] },
+  "8": { "planet": "Saturn", "gemstone": "Blue Sapphire", "colour": "Black/Dark Blue", "friendly_planets": ["Mercury", "Venus"], "unfriendly_planets": ["Sun", "Moon", "Mars"], "friendly_numbers": [3, 5, 6] },
+  "9": { "planet": "Mars", "gemstone": "Red Coral", "colour": "Red", "friendly_planets": ["Sun", "Moon", "Jupiter"], "unfriendly_planets": ["Mercury"], "friendly_numbers": [1, 2, 3, 9] }
 }

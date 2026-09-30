@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroGuide | Universal Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-container">
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <h2>✨ AstroGuide</h2>
+                <p>Universal Toolkit</p>
+            </div>
+            <nav class="tool-nav">
+                <button class="nav-btn active" data-target="birth-chart">🌌 Birth Chart</button>
+                <button class="nav-btn" data-target="numbers-stones">💎 Numbers & Stones</button>
+                <button class="nav-btn" data-target="find-dates">📅 Find Dates</button>
+                <button class="nav-btn" data-target="daily-transits">🌍 Daily Transits</button>
+                <button class="nav-btn" data-target="compatibility">❤️ Compatibility</button>
+            </nav>
+        </aside>
+
+        <section class="content-area glass-panel">
+            <!-- Birth Chart Form -->
+            <div id="birth-chart" class="tool-section active">
+                <h3>Generate Birth Chart</h3>
+                <form class="tool-form" id="form-birth-chart">
+                    <div class="input-group">
+                        <label>Birth Date</label>
+                        <input type="date" name="birth_date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Birth Time</label>
+                        <input type="time" name="birth_time" required>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Latitude</label>
+                            <input type="number" step="any" name="latitude" value="28.6139" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Longitude</label>
+                            <input type="number" step="any" name="longitude" value="77.2090" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Timezone Offset (hrs)</label>
+                        <input type="number" step="any" name="tz_offset" value="5.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Chart Style</label>
+                        <select name="chart_style">
+                            <option value="north">North Indian</option>
+                            <option value="south">South Indian</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Generate Chart</button>
+                </form>
+            </div>
+
+            <!-- Numbers & Stones Form -->
+            <div id="numbers-stones" class="tool-section">
+                <h3>Lucky Numbers & Stones</h3>
+                <form class="tool-form" id="form-numbers-stones">
+                    <div class="input-group">
+                        <label>Birth Date</label>
+                        <input type="date" name="birth_date" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Numbers & Stones</button>
+                </form>
+            </div>
+
+            <!-- Find Dates Form -->
+            <div id="find-dates" class="tool-section">
+                <h3>Find Auspicious Dates</h3>
+                <form class="tool-form" id="form-find-dates">
+                    <div class="input-group">
+                        <label>Natal Moon Sign Index (0-11)</label>
+                        <input type="number" name="natal_moon_sign" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Natal Nakshatra Index (0-26)</label>
+                        <input type="number" name="natal_nakshatra" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Start Date</label>
+                        <input type="date" name="start_date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>End Date</label>
+                        <input type="date" name="end_date" required>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Latitude</label>
+                            <input type="number" step="any" name="latitude" value="28.6139" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Longitude</label>
+                            <input type="number" step="any" name="longitude" value="77.2090" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Timezone Offset (hrs)</label>
+                        <input type="number" step="any" name="tz_offset" value="5.5" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Find Dates</button>
+                </form>
+            </div>
+
+            <!-- Daily Transits Form -->
+            <div id="daily-transits" class="tool-section">
+                <h3>Daily Transits</h3>
+                <form class="tool-form" id="form-daily-transits">
+                    <div class="input-group">
+                        <label>Natal Moon Sign Index (0-11)</label>
+                        <input type="number" name="natal_moon_sign" value="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Natal Moon Degree (0-30)</label>
+                        <input type="number" step="any" name="natal_moon_degree" value="15.0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Target Date</label>
+                        <input type="date" name="target_date" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Transits</button>
+                </form>
+            </div>
+
+            <!-- Compatibility Form -->
+            <div id="compatibility" class="tool-section">
+                <h3>Partner Compatibility</h3>
+                <form class="tool-form" id="form-compatibility">
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Person 1 Nakshatra (0-26)</label>
+                            <input type="number" name="person1_moon_nakshatra" value="0" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Person 1 Pada (1-4)</label>
+                            <input type="number" name="person1_moon_pada" value="1" required>
+                        </div>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Person 2 Nakshatra (0-26)</label>
+                            <input type="number" name="person2_moon_nakshatra" value="1" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Person 2 Pada (1-4)</label>
+                            <input type="number" name="person2_moon_pada" value="1" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Check Match</button>
+                </form>
+            </div>
+
+            <!-- Results Output -->
+            <div class="results-container">
+                <div class="loader" id="loader" style="display:none;"></div>
+                <div id="result-output" class="result-content">
+                    <div class="placeholder-text">Fill out a form and submit to see results.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

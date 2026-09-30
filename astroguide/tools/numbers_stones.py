@@ -3,7 +3,10 @@ import os
 from datetime import datetime
 from typing import Dict, Any, List
 
-from langchain_core.tools import tool
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 
 # Load the lookup table at module level
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables')
@@ -70,6 +73,7 @@ def get_numbers_and_stones(birth_date: str) -> Dict[str, Any]:
     common_friendly = list(driver_friendly.intersection(conductor_friendly))
     
     lucky_numbers = [driver_number, conductor_number] + [n for n in common_friendly if n not in (driver_number, conductor_number)]
+    lucky_numbers = list(dict.fromkeys(lucky_numbers))
     
     # We will return the driver's friendly/unfriendly planets for simplicity, or union
     friendly_planets = list(set(driver_info.get("friendly_planets", []) + conductor_info.get("friendly_planets", [])))

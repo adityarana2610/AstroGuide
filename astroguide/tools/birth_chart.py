@@ -3,7 +3,10 @@ import json
 import math
 from datetime import datetime, timedelta
 import swisseph as swe
-from langchain_core.tools import tool
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 
 # Load Nakshatra table at module level
 NAKSHATRA_FILE = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables', 'nakshatra_table.json')
@@ -16,6 +19,11 @@ RASHI_NAMES = [
     "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
     "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"
 ]
+
+def _format_planet_label(p: str) -> str:
+    """Format planet abbreviation preserving (R) retrograde indicator."""
+    prefix = p[:2]
+    return f"{prefix}(R)" if "(R)" in p else prefix
 
 def draw_north_indian_chart(houses_data, asc_sign_idx):
     """Generates an SVG for a North Indian style birth chart."""
@@ -40,7 +48,7 @@ def draw_north_indian_chart(houses_data, asc_sign_idx):
         if house_info:
             sign_idx = (asc_sign_idx + h_num - 1) % 12
             svg.append(f'<text x="{cx}" y="{cy-15}" font-size="12" font-family="Arial" text-anchor="middle" fill="gray">{sign_idx + 1}</text>')
-            planets_str = " ".join([p[:2] for p in house_info["planets"]])
+            planets_str = " ".join([_format_planet_label(p) for p in house_info["planets"]])
             if planets_str:
                 svg.append(f'<text x="{cx}" y="{cy+10}" font-size="14" font-family="Arial" text-anchor="middle" font-weight="bold">{planets_str}</text>')
     
@@ -88,9 +96,7 @@ def draw_south_indian_chart(houses_data):
         if h["house_number"] == 1:
             asc_sign_idx = s_idx
         for p in h["planets"]:
-            # Check for retrograde in houses_data - wait, we don't have it directly. 
-            # We'll just map the standard 2 letters
-            sign_contents[s_idx].append(p[:2])
+            sign_contents[s_idx].append(_format_planet_label(p))
 
     for s_idx, (cx, cy) in rashi_centers.items():
         if s_idx == asc_sign_idx:
@@ -181,7 +187,7 @@ def get_birth_chart(
     planets_data = []
     
     for p_name, p_id in planet_ids:
-        flags = swe.FLG_SIDEREAL | swe.FLG_SWIEPH
+        flags = swe.FLG_SIDEREAL | swe.FLG_SWIEPH | swe.FLG_SPEED
         res, ret = swe.calc_ut(jd, p_id, flags)
         lon = res[0]
         speed = res[3]

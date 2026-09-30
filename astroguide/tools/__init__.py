@@ -1,4 +1,7 @@
-"""Astrology, numerology, and knowledge retrieval tools returning structured JSON facts."""
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 
 from astroguide.tools.birth_chart import get_birth_chart
 from astroguide.tools.daily_transits import get_daily_transits
@@ -15,6 +18,7 @@ ALL_TOOLS = [
 ]
 
 __all__ = [
+    "tool",
     "get_birth_chart",
     "get_daily_transits",
     "get_numbers_and_stones",

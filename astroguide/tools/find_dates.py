@@ -2,7 +2,10 @@ import math
 import datetime
 from typing import Dict, Any, List
 import swisseph as swe
-from langchain_core.tools import tool
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 
 RASHI_NAMES = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
 NAKSHATRA_NAMES = [
@@ -67,6 +70,11 @@ def find_dates(natal_moon_sign: int, natal_nakshatra: int, start_date: str, end_
     Returns:
         Dict containing astrological analysis of the dates in the range, the best dates, and dates to avoid.
     """
+    if not isinstance(natal_moon_sign, int) or natal_moon_sign < 0 or natal_moon_sign > 11:
+        return {"error": f"Invalid natal_moon_sign '{natal_moon_sign}'. Must be an integer between 0 and 11."}
+    if not isinstance(natal_nakshatra, int) or natal_nakshatra < 0 or natal_nakshatra > 26:
+        return {"error": f"Invalid natal_nakshatra '{natal_nakshatra}'. Must be an integer between 0 and 26."}
+
     try:
         start_dt = datetime.datetime.strptime(start_date, "%Y-%m-%d")
         end_dt = datetime.datetime.strptime(end_date, "%Y-%m-%d")

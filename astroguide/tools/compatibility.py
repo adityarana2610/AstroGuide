@@ -1,6 +1,9 @@
 import json
 import os
-from langchain_core.tools import tool
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 
 # Load nakshatra table
 _DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables')
@@ -53,7 +56,7 @@ def get_moon_sign(nakshatra_idx: int, pada: int) -> dict:
     elif sign_idx == 6: vashya = "Dwipad"
     elif sign_idx == 7: vashya = "Keeta"
     elif sign_idx == 8: vashya = "Dwipad" if degree_in_sign < 15 else "Chatushpada"
-    elif sign_idx == 9: vashya = "Jalachara" if degree_in_sign < 15 else "Chatushpada"
+    elif sign_idx == 9: vashya = "Chatushpada" if degree_in_sign < 15 else "Jalachara"
     elif sign_idx == 10: vashya = "Dwipad"
     else: vashya = "Jalachara"
     
@@ -132,8 +135,8 @@ def match_compatibility(person1_moon_nakshatra: int, person1_moon_pada: int, per
     t1 = ((person2_moon_nakshatra - person1_moon_nakshatra) % 27) % 9
     t2 = ((person1_moon_nakshatra - person2_moon_nakshatra) % 27) % 9
     
-    t1_fav = t1 in {1, 3, 5, 7}
-    t2_fav = t2 in {1, 3, 5, 7}
+    t1_fav = t1 in {1, 3, 5, 7, 8}
+    t2_fav = t2 in {1, 3, 5, 7, 8}
     if t1_fav and t2_fav: tara_score = 3.0
     elif t1_fav or t2_fav: tara_score = 1.5
     else: tara_score = 0.0
@@ -152,7 +155,7 @@ def match_compatibility(person1_moon_nakshatra: int, person1_moon_pada: int, per
     y2_gender = p2_nak_info.get("yoni_type", p2_nak_info.get("yoni_gender", ""))
     
     if y1_animal == y2_animal:
-        yoni_score = 4.0 if y1_gender == y2_gender else 3.0
+        yoni_score = 3.0 if y1_gender == y2_gender else 4.0
     elif YONI_ENEMIES.get(y1_animal) == y2_animal:
         yoni_score = 0.0
     else:

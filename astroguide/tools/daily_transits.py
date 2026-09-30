@@ -3,7 +3,10 @@ import os
 import datetime
 from typing import Optional
 
-from langchain_core.tools import tool
+try:
+    from langchain_core.tools import tool
+except (ImportError, ModuleNotFoundError):
+    from astroguide.tools._decorator import tool
 import swisseph as swe
 
 RASHI_NAMES = [
@@ -32,7 +35,7 @@ def get_gochara_rules():
         return json.load(f)
 
 @tool
-def get_daily_transits(natal_moon_sign: int, natal_moon_degree: float, target_date: Optional[str] = None) -> dict:
+def get_daily_transits(natal_moon_sign: int, natal_moon_degree: float = 0.0, target_date: Optional[str] = None) -> dict:
     """
     Computes current planetary transits and scores them against the natal Moon sign using traditional Vedic Gochara rules with Vedha checks.
     
@@ -44,13 +47,16 @@ def get_daily_transits(natal_moon_sign: int, natal_moon_degree: float, target_da
     Returns:
         dict: A JSON-serializable dictionary containing the date, natal_moon_sign, detailed transit information for each planet (longitude, sign, house_from_moon, is_favourable, vedha_blocked, score, etc.), overall score, and a day rating summary.
     """
+    if not isinstance(natal_moon_sign, int) or natal_moon_sign < 0 or natal_moon_sign > 11:
+        return {"error": f"Invalid natal_moon_sign '{natal_moon_sign}'. Must be an integer between 0 and 11."}
+
     if not target_date:
         target_date = datetime.date.today().strftime('%Y-%m-%d')
         
     try:
         dt = datetime.datetime.strptime(target_date, '%Y-%m-%d')
     except ValueError:
-        raise ValueError(f"Invalid date format for target_date '{target_date}'. Expected YYYY-MM-DD.")
+        return {"error": f"Invalid date format for target_date '{target_date}'. Expected YYYY-MM-DD."}
     
     # Calculate Julian day for 12:00 UTC
     year, month, day = dt.year, dt.month, dt.day
