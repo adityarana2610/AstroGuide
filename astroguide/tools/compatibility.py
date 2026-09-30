@@ -5,16 +5,13 @@ try:
 except (ImportError, ModuleNotFoundError):
     from astroguide.tools._decorator import tool
 
-# Load nakshatra table
-_DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'tables')
-_NAKSHATRA_FILE = os.path.join(_DATA_DIR, 'nakshatra_table.json')
+from astroguide.utils.data_loader import load_nakshatra_table
 
-with open(_NAKSHATRA_FILE, 'r') as f:
-    _NAKSHATRA_DATA = json.load(f)
-
-# Global variables to store the parsed lists
-NAKSHATRAS = _NAKSHATRA_DATA['nakshatras']
+# Load nakshatra table and yoni rules via centralized cached data loader (enforces UTF-8)
+_NAKSHATRA_DATA = load_nakshatra_table()
+NAKSHATRAS = _NAKSHATRA_DATA.get('nakshatras', [])
 YONI_ENEMIES = _NAKSHATRA_DATA.get('yoni_compatibility', _NAKSHATRA_DATA.get('yoni_enemies', {}))
+
 
 SIGN_NAMES = [
     "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", 

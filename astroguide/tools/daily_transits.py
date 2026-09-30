@@ -27,12 +27,12 @@ PLANET_NAMES = {
 
 PLANET_KEYS = ["Sun", "Moon", "Mars", "Mercury", "Jupiter", "Venus", "Saturn", "Rahu", "Ketu"]
 
-def get_gochara_rules():
-    base_dir = os.path.dirname(__file__)
-    json_path = os.path.join(base_dir, '..', '..', 'data', 'tables', 'gochara_rules.json')
-    json_path = os.path.abspath(json_path)
-    with open(json_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+from astroguide.utils.data_loader import load_gochara_rules
+
+def get_gochara_rules() -> dict:
+    """Returns cached Gochara transit rules and Vedha pairs."""
+    return load_gochara_rules()
+
 
 @tool
 def get_daily_transits(natal_moon_sign: int, natal_moon_degree: float = 0.0, target_date: Optional[str] = None) -> dict:
