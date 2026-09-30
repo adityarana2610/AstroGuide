@@ -157,7 +157,7 @@ def get_rag_agent():
                 doc_name="astroguide_core_knowledge.txt",
                 doc_id=seeded_doc_id,
             )
-            index_profile_document(ingestor, read_profile())
+        index_profile_document(ingestor, read_profile())
 
         retriever = HybridRetriever(ingestor=ingestor, config=config)
         _rag_agent = SelfHealingRAGAgent(
