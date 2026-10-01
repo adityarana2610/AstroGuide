@@ -2,7 +2,8 @@ import functools
 from typing import Callable, Any
 
 try:
-    from langchain_core.tools import tool
+    from langchain_core.tools import tool, StructuredTool
+    StructuredTool.__call__ = lambda self, *args, **kwargs: self.func(*args, **kwargs)
 except (ImportError, ModuleNotFoundError):
     class MockTool:
         """Fallback tool wrapper replicating LangChain tool decorator functionality."""

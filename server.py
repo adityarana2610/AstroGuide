@@ -173,7 +173,10 @@ def get_rag_agent():
 
 @app.get("/")
 def read_root():
-    return FileResponse(os.path.join(static_dir, "index.html"))
+    return FileResponse(
+        os.path.join(static_dir, "index.html"),
+        headers={"Cache-Control": "no-cache, no-store, must-revalidate"}
+    )
 
 @app.get("/health")
 def health_check():

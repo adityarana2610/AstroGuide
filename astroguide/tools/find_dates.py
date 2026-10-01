@@ -2,10 +2,7 @@ import math
 import datetime
 from typing import Dict, Any, List
 import swisseph as swe
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 
 RASHI_NAMES = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
 from astroguide.utils.data_loader import load_panchang_reference
@@ -127,8 +124,8 @@ def find_dates(natal_moon_sign: int, natal_nakshatra: int, start_date: str, end_
         
         jd = swe.julday(utc_noon.year, utc_noon.month, utc_noon.day, utc_noon.hour + utc_noon.minute / 60.0)
         
-        moon_pos, _ = swe.calc_ut(jd, swe.MOON, swe.FLG_SIDEREAL)
-        sun_pos, _ = swe.calc_ut(jd, swe.SUN, swe.FLG_SIDEREAL)
+        moon_pos = swe.calc_ut(jd, swe.MOON, swe.FLG_SIDEREAL)[0]
+        sun_pos = swe.calc_ut(jd, swe.SUN, swe.FLG_SIDEREAL)[0]
         moon_long = moon_pos[0]
         sun_long = sun_pos[0]
         

@@ -1,7 +1,4 @@
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 
 from astroguide.tools.birth_chart import get_birth_chart
 from astroguide.tools.daily_transits import get_daily_transits

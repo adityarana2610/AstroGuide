@@ -1,9 +1,6 @@
 import json
 import os
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 
 from astroguide.utils.data_loader import load_nakshatra_table
 

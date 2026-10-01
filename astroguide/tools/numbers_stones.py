@@ -3,10 +3,7 @@ import os
 from datetime import datetime
 from typing import Dict, Any, List
 
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 
 from astroguide.utils.data_loader import load_planet_stones, load_remedies, get_remedy_for_planet
 

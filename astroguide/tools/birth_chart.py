@@ -3,10 +3,7 @@ import json
 import math
 from datetime import datetime, timedelta
 import swisseph as swe
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 
 from astroguide.utils.data_loader import load_nakshatras
 
@@ -188,7 +185,7 @@ def get_birth_chart(
     
     for p_name, p_id in planet_ids:
         flags = swe.FLG_SIDEREAL | swe.FLG_SWIEPH | swe.FLG_SPEED
-        res, ret = swe.calc_ut(jd, p_id, flags)
+        res = swe.calc_ut(jd, p_id, flags)[0]
         lon = res[0]
         speed = res[3]
         

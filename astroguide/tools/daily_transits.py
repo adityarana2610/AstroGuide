@@ -3,10 +3,7 @@ import os
 import datetime
 from typing import Optional
 
-try:
-    from langchain_core.tools import tool
-except (ImportError, ModuleNotFoundError):
-    from astroguide.tools._decorator import tool
+from astroguide.tools._decorator import tool
 import swisseph as swe
 
 RASHI_NAMES = [
@@ -69,7 +66,7 @@ def get_daily_transits(natal_moon_sign: int, natal_moon_degree: float = 0.0, tar
     
     transit_positions = {}
     for p in planets:
-        res, _ = swe.calc_ut(jd, p, swe.FLG_SIDEREAL | swe.FLG_SWIEPH)
+        res = swe.calc_ut(jd, p, swe.FLG_SIDEREAL | swe.FLG_SWIEPH)[0]
         lon = res[0]
         transit_positions[PLANET_NAMES[p]] = lon
         
