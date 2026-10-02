@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>AstroGuide | Universal Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=2.0">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-container">
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <h2>✨ AstroGuide</h2>
+                <p>Universal Toolkit</p>
+            </div>
+            <nav class="tool-nav">
+                <button class="nav-btn active" data-target="birth-chart">🌌 Birth Chart</button>
+                <button class="nav-btn" data-target="numbers-stones">💎 Numbers & Stones</button>
+                <button class="nav-btn" data-target="find-dates">📅 Find Dates</button>
+                <button class="nav-btn" data-target="daily-transits">🌍 Daily Transits</button>
+                <button class="nav-btn" data-target="compatibility">❤️ Compatibility</button>
+                <button class="nav-btn" data-target="profile">◉ My Profile</button>
+                <button class="nav-btn" data-target="rag-chat">✦ Ask AstroGuide</button>
+            </nav>
+        </aside>
+
+        <section class="content-area glass-panel">
+            <!-- Birth Chart Form -->
+            <div id="birth-chart" class="tool-section active">
+                <h3>Generate Birth Chart</h3>
+                <form class="tool-form" id="form-birth-chart">
+                    <div class="input-group">
+                        <label>Birth Date</label>
+                        <input type="date" name="birth_date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Birth Time</label>
+                        <input type="time" name="birth_time" required>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Latitude</label>
+                            <input type="number" step="any" name="latitude" value="28.6139" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Longitude</label>
+                            <input type="number" step="any" name="longitude" value="77.2090" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Timezone Offset (hrs)</label>
+                        <input type="number" step="any" name="tz_offset" value="5.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Chart Style</label>
+                        <select name="chart_style">
+                            <option value="north">North Indian</option>
+                            <option value="south">South Indian</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Generate Chart</button>
+                </form>
+            </div>
+
+            <!-- Numbers & Stones Form -->
+            <div id="numbers-stones" class="tool-section">
+                <h3>Lucky Numbers & Stones</h3>
+                <form class="tool-form" id="form-numbers-stones">
+                    <div class="input-group">
+                        <label>Birth Date</label>
+                        <input type="date" name="birth_date" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Numbers & Stones</button>
+                </form>
+            </div>
+
+            <!-- Find Dates Form -->
+            <div id="find-dates" class="tool-section">
+                <h3>Find Auspicious Dates</h3>
+                <form class="tool-form" id="form-find-dates">
+                    <div class="input-group">
+                        <label>Natal Moon Sign</label>
+                        <select name="natal_moon_sign" data-type="number" required>
+                            <option value="0">Aries (Mesha)</option>
+                            <option value="1">Taurus (Vrishabha)</option>
+                            <option value="2">Gemini (Mithuna)</option>
+                            <option value="3">Cancer (Karka)</option>
+                            <option value="4">Leo (Simha)</option>
+                            <option value="5">Virgo (Kanya)</option>
+                            <option value="6">Libra (Tula)</option>
+                            <option value="7">Scorpio (Vrishchika)</option>
+                            <option value="8">Sagittarius (Dhanu)</option>
+                            <option value="9">Capricorn (Makara)</option>
+                            <option value="10">Aquarius (Kumbha)</option>
+                            <option value="11">Pisces (Meena)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Natal Nakshatra</label>
+                        <select name="natal_nakshatra" data-type="number" required>
+                            <option value="0">1. Ashwini</option>
+                            <option value="1">2. Bharani</option>
+                            <option value="2">3. Krittika</option>
+                            <option value="3">4. Rohini</option>
+                            <option value="4">5. Mrigashira</option>
+                            <option value="5">6. Ardra</option>
+                            <option value="6">7. Punarvasu</option>
+                            <option value="7">8. Pushya</option>
+                            <option value="8">9. Ashlesha</option>
+                            <option value="9">10. Magha</option>
+                            <option value="10">11. Purva Phalguni</option>
+                            <option value="11">12. Uttara Phalguni</option>
+                            <option value="12">13. Hasta</option>
+                            <option value="13">14. Chitra</option>
+                            <option value="14">15. Swati</option>
+                            <option value="15">16. Vishakha</option>
+                            <option value="16">17. Anuradha</option>
+                            <option value="17">18. Jyeshtha</option>
+                            <option value="18">19. Mula</option>
+                            <option value="19">20. Purva Ashadha</option>
+                            <option value="20">21. Uttara Ashadha</option>
+                            <option value="21">22. Shravana</option>
+                            <option value="22">23. Dhanishta</option>
+                            <option value="23">24. Shatabhisha</option>
+                            <option value="24">25. Purva Bhadrapada</option>
+                            <option value="25">26. Uttara Bhadrapada</option>
+                            <option value="26">27. Revati</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Start Date</label>
+                        <input type="date" name="start_date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>End Date</label>
+                        <input type="date" name="end_date" required>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Latitude</label>
+                            <input type="number" step="any" name="latitude" value="28.6139" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Longitude</label>
+                            <input type="number" step="any" name="longitude" value="77.2090" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Timezone Offset (hrs)</label>
+                        <input type="number" step="any" name="tz_offset" value="5.5" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Find Dates</button>
+                </form>
+            </div>
+
+            <!-- Daily Transits Form -->
+            <div id="daily-transits" class="tool-section">
+                <h3>Daily Transits</h3>
+                <form class="tool-form" id="form-daily-transits">
+                    <div class="input-group">
+                        <label>Natal Moon Sign</label>
+                        <select name="natal_moon_sign" data-type="number" required>
+                            <option value="0">Aries (Mesha)</option>
+                            <option value="1">Taurus (Vrishabha)</option>
+                            <option value="2">Gemini (Mithuna)</option>
+                            <option value="3">Cancer (Karka)</option>
+                            <option value="4">Leo (Simha)</option>
+                            <option value="5">Virgo (Kanya)</option>
+                            <option value="6">Libra (Tula)</option>
+                            <option value="7">Scorpio (Vrishchika)</option>
+                            <option value="8">Sagittarius (Dhanu)</option>
+                            <option value="9">Capricorn (Makara)</option>
+                            <option value="10">Aquarius (Kumbha)</option>
+                            <option value="11">Pisces (Meena)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Natal Moon Degree (0-29.9°)</label>
+                        <input type="number" step="any" min="0" max="29.99" name="natal_moon_degree" value="15.0" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Target Date</label>
+                        <input type="date" name="target_date" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Transits</button>
+                </form>
+            </div>
+
+            <!-- Compatibility Form -->
+            <div id="compatibility" class="tool-section">
+                <h3>Partner Compatibility (Ashtakoota)</h3>
+                <form class="tool-form" id="form-compatibility">
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Person 1 Nakshatra</label>
+                            <select name="person1_moon_nakshatra" data-type="number" required>
+                                <option value="0">1. Ashwini</option>
+                                <option value="1">2. Bharani</option>
+                                <option value="2">3. Krittika</option>
+                                <option value="3">4. Rohini</option>
+                                <option value="4">5. Mrigashira</option>
+                                <option value="5">6. Ardra</option>
+                                <option value="6">7. Punarvasu</option>
+                                <option value="7">8. Pushya</option>
+                                <option value="8">9. Ashlesha</option>
+                                <option value="9">10. Magha</option>
+                                <option value="10">11. Purva Phalguni</option>
+                                <option value="11">12. Uttara Phalguni</option>
+                                <option value="12">13. Hasta</option>
+                                <option value="13">14. Chitra</option>
+                                <option value="14">15. Swati</option>
+                                <option value="15">16. Vishakha</option>
+                                <option value="16">17. Anuradha</option>
+                                <option value="17">18. Jyeshtha</option>
+                                <option value="18">19. Mula</option>
+                                <option value="19">20. Purva Ashadha</option>
+                                <option value="20">21. Uttara Ashadha</option>
+                                <option value="21">22. Shravana</option>
+                                <option value="22">23. Dhanishta</option>
+                                <option value="23">24. Shatabhisha</option>
+                                <option value="24">25. Purva Bhadrapada</option>
+                                <option value="25">26. Uttara Bhadrapada</option>
+                                <option value="26">27. Revati</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Person 1 Pada (1-4)</label>
+                            <select name="person1_moon_pada" data-type="number" required>
+                                <option value="1">Pada 1</option>
+                                <option value="2">Pada 2</option>
+                                <option value="3">Pada 3</option>
+                                <option value="4">Pada 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label>Person 2 Nakshatra</label>
+                            <select name="person2_moon_nakshatra" data-type="number" required>
+                                <option value="0">1. Ashwini</option>
+                                <option value="1" selected>2. Bharani</option>
+                                <option value="2">3. Krittika</option>
+                                <option value="3">4. Rohini</option>
+                                <option value="4">5. Mrigashira</option>
+                                <option value="5">6. Ardra</option>
+                                <option value="6">7. Punarvasu</option>
+                                <option value="7">8. Pushya</option>
+                                <option value="8">9. Ashlesha</option>
+                                <option value="9">10. Magha</option>
+                                <option value="10">11. Purva Phalguni</option>
+                                <option value="11">12. Uttara Phalguni</option>
+                                <option value="12">13. Hasta</option>
+                                <option value="13">14. Chitra</option>
+                                <option value="14">15. Swati</option>
+                                <option value="15">16. Vishakha</option>
+                                <option value="16">17. Anuradha</option>
+                                <option value="17">18. Jyeshtha</option>
+                                <option value="18">19. Mula</option>
+                                <option value="19">20. Purva Ashadha</option>
+                                <option value="20">21. Uttara Ashadha</option>
+                                <option value="21">22. Shravana</option>
+                                <option value="22">23. Dhanishta</option>
+                                <option value="23">24. Shatabhisha</option>
+                                <option value="24">25. Purva Bhadrapada</option>
+                                <option value="25">26. Uttara Bhadrapada</option>
+                                <option value="26">27. Revati</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Person 2 Pada (1-4)</label>
+                            <select name="person2_moon_pada" data-type="number" required>
+                                <option value="1">Pada 1</option>
+                                <option value="2">Pada 2</option>
+                                <option value="3">Pada 3</option>
+                                <option value="4">Pada 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Check Match</button>
+                </form>
+            </div>
+
+            <!-- Profile and saved chart history -->
+            <div id="profile" class="tool-section">
+                <h3>My Profile</h3>
+                <p class="section-intro">Keep your personal details and generated charts available to AstroGuide.</p>
+                <form class="tool-form" id="form-profile">
+                    <div class="input-group">
+                        <label for="profile-name">Name</label>
+                        <input id="profile-name" type="text" name="display_name" maxlength="120" placeholder="Your name">
+                    </div>
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label for="profile-date">Birth date</label>
+                            <input id="profile-date" type="date" name="birth_date">
+                        </div>
+                        <div class="input-group">
+                            <label for="profile-time">Birth time</label>
+                            <input id="profile-time" type="time" name="birth_time">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="profile-location">Birth location</label>
+                        <input id="profile-location" type="text" name="birth_location" maxlength="200" placeholder="City, country">
+                    </div>
+                    <div class="input-group">
+                        <label for="profile-notes">Personal astrology notes</label>
+                        <textarea id="profile-notes" name="notes" rows="5" maxlength="5000" placeholder="Questions, preferences, or context to use with RAG"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Save profile</button>
+                </form>
+                <div id="chart-history" class="chart-history">
+                    <h4>Saved charts and tool results</h4>
+                    <div class="placeholder-text">Generated results will appear here automatically.</div>
+                </div>
+            </div>
+
+            <!-- RAG Chat -->
+            <div id="rag-chat" class="tool-section">
+                <h3>Ask AstroGuide</h3>
+                <p class="section-intro">Search the indexed astrology guidance and get an answer grounded in retrieved sources.</p>
+                <form class="tool-form" id="form-rag">
+                    <div class="input-group">
+                        <label for="rag-query">Your question</label>
+                        <textarea id="rag-query" name="query" rows="5" maxlength="2000" placeholder="What does my Moon nakshatra represent?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Ask the knowledge base</button>
+                </form>
+            </div>
+
+            <!-- Results Output -->
+            <div class="results-container">
+                <div class="loader" id="loader" style="display:none;"></div>
+                <div id="result-output" class="result-content">
+                    <div class="placeholder-text">Fill out a form and submit to see results.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js?v=2.0"></script>
+</body>
+</html>

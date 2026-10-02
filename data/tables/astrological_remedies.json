@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Vedic astrological remedies for the Navagrahas (9 Grahas) synthesized from classical Jyotish and live astrology MCP services.",
+    "created_for": "AstroGuide Feature F1",
+    "total_planets": 9
+  },
+  "remedies": {
+    "Sun": {
+      "planet": "Sun",
+      "sanskrit_name": "Surya",
+      "vedic_number": 1,
+      "primary_gemstone": "Ruby",
+      "substitute_gemstone": "Red Garnet",
+      "substitute_gemstones": [
+        "Red Garnet",
+        "Red Spinel",
+        "Star Ruby"
+      ],
+      "metal": "Gold or Copper",
+      "wear_finger": "Ring Finger (Anamika)",
+      "wear_day": "Sunday morning",
+      "wear_time": "Within 1 hour after sunrise during Shukla Paksha (waxing moon)",
+      "weight_carats": "3.0 - 5.25 carats",
+      "mantra": "Om Hram Hreem Hroum Sah Suryaya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Hram Hreem Hroum Sah Suryaya Namah",
+        "nama_mantra": "Om Suryaya Namah",
+        "gayatri_mantra": "Om Bhaskaray Vidmahe Divakaraya Dhimahi Tanno Suryah Prachodayat",
+        "recitation_count": 7000
+      },
+      "deity": "Lord Surya / Shiva",
+      "deities": [
+        "Lord Surya (Aditya)",
+        "Lord Shiva"
+      ],
+      "rudraksha": "1 Mukhi or 12 Mukhi",
+      "rudraksha_details": {
+        "mukhi": "1 Mukhi (Eka Mukhi) or 12 Mukhi (Barah Mukhi)",
+        "ruling_planet": "Sun",
+        "significance": "Lord Surya and Lord Shiva; increases self-power, leadership, clarity of purpose, and vitality."
+      },
+      "charity_items": [
+        "Wheat",
+        "Copper vessels",
+        "Jaggery (Gur)",
+        "Red cloth",
+        "Ruby / Red stones",
+        "Saffron"
+      ],
+      "charity_recipients": "Father figures, Vedic scholars, temple priests, or needy persons",
+      "fasting_day": "Sunday",
+      "fasting_rules": "Fast from sunrise; consume one salt-free meal made of wheat, milk, or sweet porridge (kheer) after midday or sunset; avoid heavy spices.",
+      "positive_lifestyle_action": "Practice Surya Namaskar at dawn, cultivate respectful relationships with fatherly figures, lead with integrity, and spend 15 minutes in natural morning sunlight.",
+      "positive_lifestyle_actions": [
+        "Perform Surya Namaskar (Sun Salutations) outdoors facing east at dawn.",
+        "Express gratitude and maintain respectful, caring relationships with your father and elder mentors.",
+        "Cultivate transparent, courageous leadership with humility and dignity.",
+        "Spend 15-20 minutes daily in morning natural sunlight to boost vitality and vitamin D synthesis."
+      ]
+    },
+    "Moon": {
+      "planet": "Moon",
+      "sanskrit_name": "Chandra",
+      "vedic_number": 2,
+      "primary_gemstone": "Pearl",
+      "substitute_gemstone": "Moonstone",
+      "substitute_gemstones": [
+        "Moonstone",
+        "White Coral",
+        "Natural Basra Pearl"
+      ],
+      "metal": "Silver",
+      "wear_finger": "Little Finger or Ring Finger (Kanishtha / Anamika)",
+      "wear_day": "Monday",
+      "wear_time": "Monday evening during moonrise or Shukla Paksha Monday morning",
+      "weight_carats": "5.0 - 7.25 carats",
+      "mantra": "Om Shram Shreem Shroum Sah Chandraya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Shram Shreem Shroum Sah Chandraya Namah",
+        "nama_mantra": "Om Chandraya Namah",
+        "gayatri_mantra": "Om Ksheeraputraya Vidmahe Amritatvaya Dhimahi Tanno Chandrah Prachodayat",
+        "recitation_count": 11000
+      },
+      "deity": "Goddess Parvati / Lord Shiva / Chandra Dev",
+      "deities": [
+        "Goddess Parvati",
+        "Lord Shiva",
+        "Chandra Dev"
+      ],
+      "rudraksha": "2 Mukhi (Do Mukhi)",
+      "rudraksha_details": {
+        "mukhi": "2 Mukhi (Do Mukhi)",
+        "ruling_planet": "Moon",
+        "significance": "Ardhanarishwara; balances mind, emotional stability, harmony in relationships, and inner calm."
+      },
+      "charity_items": [
+        "White rice",
+        "Milk",
+        "Curd",
+        "Silver",
+        "White clothes",
+        "Sugar",
+        "Drinking water"
+      ],
+      "charity_recipients": "Mother figures, elderly women, nurses, or drought/water relief initiatives",
+      "fasting_day": "Monday",
+      "fasting_rules": "Fast sunrise to moonrise on Mondays; break fast after offering water (arghya) to the Moon with satvik white foods like milk or kheer without salt.",
+      "positive_lifestyle_action": "Practice calming pranayama (Anulom Vilom), honor your mother, maintain emotional journaling, and stay well hydrated.",
+      "positive_lifestyle_actions": [
+        "Practice alternate nostril breathing (Anulom Vilom) to stabilize fluctuating emotions.",
+        "Deepen respectful, affectionate bonding with mother figures and women.",
+        "Drink clean water from a silver cup; take mindful walks near natural water bodies.",
+        "Foster emotional mindfulness and avoid brooding over past regrets."
+      ]
+    },
+    "Mars": {
+      "planet": "Mars",
+      "sanskrit_name": "Mangal",
+      "vedic_number": 9,
+      "primary_gemstone": "Red Coral",
+      "substitute_gemstone": "Red Agate",
+      "substitute_gemstones": [
+        "Red Agate",
+        "Carnelian",
+        "Red Jasper"
+      ],
+      "metal": "Gold or Copper",
+      "wear_finger": "Ring Finger (Anamika)",
+      "wear_day": "Tuesday",
+      "wear_time": "Tuesday morning within 1 hour after sunrise during Shukla Paksha",
+      "weight_carats": "6.0 - 10.25 carats",
+      "mantra": "Om Kram Kreem Kroum Sah Bhaumaya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Kram Kreem Kroum Sah Bhaumaya Namah",
+        "nama_mantra": "Om Angarakaya Namah",
+        "gayatri_mantra": "Om Angarkaya Vidmahe Bhoomipalaya Dhimahi Tanno Bhaumah Prachodayat",
+        "recitation_count": 10000
+      },
+      "deity": "Lord Hanuman / Lord Kartikeya",
+      "deities": [
+        "Lord Hanuman",
+        "Lord Kartikeya (Murugan)",
+        "Mangal Dev"
+      ],
+      "rudraksha": "3 Mukhi (Teen Mukhi)",
+      "rudraksha_details": {
+        "mukhi": "3 Mukhi (Teen Mukhi)",
+        "ruling_planet": "Mars",
+        "significance": "Agni Dev; purifies past guilt, ignites courageous vitality, and overcomes laziness and blood impurities."
+      },
+      "charity_items": [
+        "Red lentils (Masoor dal)",
+        "Jaggery (Gur)",
+        "Copper coins",
+        "Red cloth",
+        "Blood donation",
+        "Sweets"
+      ],
+      "charity_recipients": "Brothers, soldiers, uniformed service personnel, or blood banks",
+      "fasting_day": "Tuesday",
+      "fasting_rules": "Fast on Tuesdays from sunrise to sunset; partake in a single salt-free meal prepared with wheat flour, jaggery, or red lentils in the evening.",
+      "positive_lifestyle_action": "Channel intense energy into disciplined athletics or strength training, practice non-violence and patience, and protect younger siblings.",
+      "positive_lifestyle_actions": [
+        "Channel vigor into daily cardiovascular or resistance physical training.",
+        "Recite Hanuman Chalisa for emotional resilience and fearlessness.",
+        "Practice a 5-second pause before responding when angry to prevent impulsive outbursts.",
+        "Support younger brothers, comrades, and stand up courageously for vulnerable people."
+      ]
+    },
+    "Mercury": {
+      "planet": "Mercury",
+      "sanskrit_name": "Budha",
+      "vedic_number": 5,
+      "primary_gemstone": "Emerald",
+      "substitute_gemstone": "Peridot",
+      "substitute_gemstones": [
+        "Peridot",
+        "Green Tourmaline",
+        "Green Onyx",
+        "Tsavorite"
+      ],
+      "metal": "Gold or Bronze",
+      "wear_finger": "Little Finger (Kanishtha)",
+      "wear_day": "Wednesday",
+      "wear_time": "Wednesday morning within 2 hours after sunrise during Shukla Paksha",
+      "weight_carats": "4.0 - 6.25 carats",
+      "mantra": "Om Bram Breem Broum Sah Budhaya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Bram Breem Broum Sah Budhaya Namah",
+        "nama_mantra": "Om Budhaya Namah",
+        "gayatri_mantra": "Om Gajadhwajaya Vidmahe Sukhahastaya Dhimahi Tanno Budhah Prachodayat",
+        "recitation_count": 9000
+      },
+      "deity": "Lord Vishnu / Lord Ganesha",
+      "deities": [
+        "Lord Vishnu",
+        "Lord Ganesha",
+        "Budha Dev"
+      ],
+      "rudraksha": "4 Mukhi or 10 Mukhi",
+      "rudraksha_details": {
+        "mukhi": "4 Mukhi (Char Mukhi) or 10 Mukhi",
+        "ruling_planet": "Mercury",
+        "significance": "Lord Brahma (4 Mukhi) and Lord Vishnu (10 Mukhi); enhances memory, articulation, intellectual dexterity, and business acumen."
+      },
+      "charity_items": [
+        "Whole green moong dal",
+        "Green vegetables",
+        "Educational books and notebooks",
+        "Green clothes",
+        "Grass to cows"
+      ],
+      "charity_recipients": "Students, schools, libraries, or speech/intellectually challenged persons",
+      "fasting_day": "Wednesday",
+      "fasting_rules": "Fast on Wednesdays from sunrise to sunset; eat a single meal made of green moong or green fruits; abstain from deceitful talk.",
+      "positive_lifestyle_action": "Read stimulating literature, practice articulate and truthful communication, solve analytical puzzles, and keep organized accounts.",
+      "positive_lifestyle_actions": [
+        "Dedicate 30 minutes daily to reading, writing, or learning a new language/skill.",
+        "Practice conscious, honest, and diplomatic communication without gossip.",
+        "Keep financial accounts and workspaces meticulously organized.",
+        "Feed green grass to cows or care for indoor green houseplants."
+      ]
+    },
+    "Jupiter": {
+      "planet": "Jupiter",
+      "sanskrit_name": "Guru",
+      "vedic_number": 3,
+      "primary_gemstone": "Yellow Sapphire",
+      "substitute_gemstone": "Yellow Topaz",
+      "substitute_gemstones": [
+        "Yellow Topaz",
+        "Citrine (Sunela)",
+        "Yellow Tourmaline"
+      ],
+      "metal": "Gold or Brass",
+      "wear_finger": "Index Finger (Tarjani)",
+      "wear_day": "Thursday",
+      "wear_time": "Thursday morning during Jupiter hora / sunrise during Shukla Paksha",
+      "weight_carats": "4.0 - 5.25 carats",
+      "mantra": "Om Gram Greem Groum Sah Gurave Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Gram Greem Groum Sah Gurave Namah",
+        "nama_mantra": "Om Brihaspataye Namah",
+        "gayatri_mantra": "Om Vrishabadhwajaya Vidmahe Krunihastaya Dhimahi Tanno Guruh Prachodayat",
+        "recitation_count": 19000
+      },
+      "deity": "Lord Brihaspati / Lord Vishnu / Lord Dakshinamurthy",
+      "deities": [
+        "Lord Brihaspati",
+        "Lord Vishnu",
+        "Lord Dakshinamurthy"
+      ],
+      "rudraksha": "5 Mukhi (Panch Mukhi)",
+      "rudraksha_details": {
+        "mukhi": "5 Mukhi (Panch Mukhi)",
+        "ruling_planet": "Jupiter",
+        "significance": "Kalagni Rudra; confers spiritual wisdom, good fortune, broad-mindedness, and protects against untimely misfortunes."
+      },
+      "charity_items": [
+        "Chana dal (Bengal gram)",
+        "Turmeric (Haldi)",
+        "Yellow cloth",
+        "Bananas",
+        "Yellow sweets (Besan ladoo)",
+        "Spiritual books"
+      ],
+      "charity_recipients": "Teachers, professors, spiritual mentors, Brahmins, or orphanage education funds",
+      "fasting_day": "Thursday",
+      "fasting_rules": "Fast on Thursdays; avoid washing hair/clothes; consume one yellow salt-free meal made of chana dal or besan with turmeric once a day.",
+      "positive_lifestyle_action": "Pursue lifelong wisdom, mentor others with generosity, honor teachers, and maintain optimistic ethical standards.",
+      "positive_lifestyle_actions": [
+        "Engage in regular philosophical and moral reflection to broaden worldview.",
+        "Show genuine veneration to teachers, professors, and spiritual mentors.",
+        "Actively mentor junior colleagues or underprivileged students.",
+        "Water and venerate a Peepal or Banana tree on Thursday mornings."
+      ]
+    },
+    "Venus": {
+      "planet": "Venus",
+      "sanskrit_name": "Shukra",
+      "vedic_number": 6,
+      "primary_gemstone": "Diamond",
+      "substitute_gemstone": "White Zircon",
+      "substitute_gemstones": [
+        "White Zircon",
+        "White Opal",
+        "White Sapphire",
+        "Clear Quartz"
+      ],
+      "metal": "Silver, Platinum, or White Gold",
+      "wear_finger": "Middle Finger or Ring Finger",
+      "wear_day": "Friday",
+      "wear_time": "Friday morning at sunrise during Shukla Paksha",
+      "weight_carats": "1.0 - 2.5 carats",
+      "mantra": "Om Dram Dreem Droum Sah Shukraya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Dram Dreem Droum Sah Shukraya Namah",
+        "nama_mantra": "Om Shukraya Namah",
+        "gayatri_mantra": "Om Rajadabhadraya Vidmahe Bhrigukanyaya Dhimahi Tanno Shukrah Prachodayat",
+        "recitation_count": 16000
+      },
+      "deity": "Goddess Lakshmi / Shukracharya",
+      "deities": [
+        "Goddess Lakshmi",
+        "Shukracharya"
+      ],
+      "rudraksha": "6 Mukhi or 13 Mukhi",
+      "rudraksha_details": {
+        "mukhi": "6 Mukhi (Kartikeya) or 13 Mukhi (Kamadeva)",
+        "ruling_planet": "Venus",
+        "significance": "Enhances charisma, artistic expression, marital contentment, and refined emotional sensitivity."
+      },
+      "charity_items": [
+        "White silk/linen",
+        "Curd",
+        "Ghee",
+        "Sugar (Misri)",
+        "Perfumes",
+        "Silver",
+        "Cosmetic kits"
+      ],
+      "charity_recipients": "Artists, underprivileged women, young girls, or women empowerment shelters",
+      "fasting_day": "Friday",
+      "fasting_rules": "Fast on Fridays from sunrise to sunset; break fast after worshipping Goddess Lakshmi with white sweet milk porridge (kheer) without sour substances.",
+      "positive_lifestyle_action": "Express creativity through music, visual arts, or refined writing; cultivate clean aesthetics; honor marital and romantic partners.",
+      "positive_lifestyle_actions": [
+        "Express aesthetic creativity through art, music, architecture, or interior design.",
+        "Treat life partner and women with unconditional courtesy and dignity.",
+        "Practice personal grooming, cleanliness, and wear pleasant natural scents.",
+        "Maintain moderation in sensory pleasures to avoid dissipation of vital energy."
+      ]
+    },
+    "Saturn": {
+      "planet": "Saturn",
+      "sanskrit_name": "Shani",
+      "vedic_number": 8,
+      "primary_gemstone": "Blue Sapphire",
+      "substitute_gemstone": "Amethyst",
+      "substitute_gemstones": [
+        "Amethyst (Jamuniya)",
+        "Iolite (Neeli)",
+        "Blue Topaz",
+        "Lapis Lazuli"
+      ],
+      "metal": "Silver, Panchdhatu, or Iron",
+      "wear_finger": "Middle Finger (Madhyama)",
+      "wear_day": "Saturday",
+      "wear_time": "Saturday evening during twilight or Saturday sunrise during Shukla Paksha",
+      "weight_carats": "3.0 - 5.25 carats",
+      "mantra": "Om Pram Preem Proum Sah Shanaishcharaya Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Pram Preem Proum Sah Shanaishcharaya Namah",
+        "nama_mantra": "Om Sham Shanaishcharaya Namah",
+        "gayatri_mantra": "Om Kakadhwajaya Vidmahe Khadgahastaya Dhimahi Tanno Mandah Prachodayat",
+        "recitation_count": 23000
+      },
+      "deity": "Lord Shani / Lord Hanuman / Lord Shiva",
+      "deities": [
+        "Lord Shani",
+        "Lord Hanuman",
+        "Lord Shiva"
+      ],
+      "rudraksha": "7 Mukhi (Saat Mukhi) or 14 Mukhi",
+      "rudraksha_details": {
+        "mukhi": "7 Mukhi (Mahalakshmi) or 14 Mukhi (Deva Mani)",
+        "ruling_planet": "Saturn",
+        "significance": "Mitigates Sadhe Sati and Saturn afflictions, fosters financial stability, perseverance, and emotional fortitude."
+      },
+      "charity_items": [
+        "Whole black urad dal",
+        "Mustard oil",
+        "Black sesame seeds",
+        "Iron utensils",
+        "Black blankets",
+        "Black footwear"
+      ],
+      "charity_recipients": "Manual laborers, sanitation workers, elderly caretakers, and destitute persons",
+      "fasting_day": "Saturday",
+      "fasting_rules": "Fast on Saturdays from sunrise to sunset; perform Chhaya Daan (see face in bowl of mustard oil and donate); break fast with sesame or khichdi.",
+      "positive_lifestyle_action": "Practice stoic patience, respect laborers and cleaners, embrace long-term discipline, and serve elderly parents.",
+      "positive_lifestyle_actions": [
+        "Cultivate patient perseverance: treat obstacles as character-building crucibles.",
+        "Treat domestic workers, sanitation workers, and manual laborers with warmth and fair compensation.",
+        "Light a mustard oil lamp under a Peepal tree on Saturday evenings.",
+        "Maintain punctuality, avoid procrastination, and embrace humble selfless service (seva)."
+      ]
+    },
+    "Rahu": {
+      "planet": "Rahu",
+      "sanskrit_name": "Rahu",
+      "vedic_number": 4,
+      "primary_gemstone": "Hessonite Garnet (Gomed)",
+      "substitute_gemstone": "Spessartite Garnet",
+      "substitute_gemstones": [
+        "Spessartite Garnet",
+        "Brown Tourmaline",
+        "Amber",
+        "Brown Zircon"
+      ],
+      "metal": "Silver or Ashtadhatu",
+      "wear_finger": "Middle Finger or Little Finger",
+      "wear_day": "Saturday",
+      "wear_time": "Saturday twilight or during Rahu Kalam on Saturday evening",
+      "weight_carats": "4.0 - 6.25 carats",
+      "mantra": "Om Bhram Bhreem Bhroum Sah Rahave Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Bhram Bhreem Bhroum Sah Rahave Namah",
+        "nama_mantra": "Om Rahave Namah",
+        "gayatri_mantra": "Om Nagadhwajaya Vidmahe Padmahastaya Dhimahi Tanno Rahuh Prachodayat",
+        "recitation_count": 18000
+      },
+      "deity": "Goddess Durga / Lord Bhairava / Goddess Saraswati",
+      "deities": [
+        "Goddess Durga",
+        "Lord Bhairava",
+        "Goddess Saraswati",
+        "Rahu Dev"
+      ],
+      "rudraksha": "8 Mukhi (Aath Mukhi)",
+      "rudraksha_details": {
+        "mukhi": "8 Mukhi (Lord Ganesha)",
+        "ruling_planet": "Rahu",
+        "significance": "Removes hurdles and hidden obstacles, dispels illusions, clears mental confusion, and insulates against deception."
+      },
+      "charity_items": [
+        "Dark blue/black blankets",
+        "Mustard oil",
+        "Black sesame",
+        "Radish",
+        "Coins",
+        "Coconut offered in flowing water"
+      ],
+      "charity_recipients": "Lepers, street cleaners, sweepers, or stray dog rescue shelters",
+      "fasting_day": "Saturday",
+      "fasting_rules": "Fast on Saturdays until sunset; avoid tobacco/alcohol; recite Durga Saptashati or Rahu Stotram; break fast with satvik khichdi.",
+      "positive_lifestyle_action": "Clear physical and digital clutter, ground thinking through meditation, avoid speculative gambling, and maintain strict sleep hygiene.",
+      "positive_lifestyle_actions": [
+        "Declutter electronic gadgets, old cables, and unorganized storage spaces.",
+        "Practice regular digital detox periods to counter mental illusions and info-overload.",
+        "Avoid high-risk financial speculation, get-rich-quick schemes, and deceptive practices.",
+        "Feed stray dogs and birds daily with whole grain bread or biscuits."
+      ]
+    },
+    "Ketu": {
+      "planet": "Ketu",
+      "sanskrit_name": "Ketu",
+      "vedic_number": 7,
+      "primary_gemstone": "Cat's Eye Chrysoberyl (Lehsunia)",
+      "substitute_gemstone": "Turquoise (Firoza)",
+      "substitute_gemstones": [
+        "Turquoise",
+        "Tiger's Eye",
+        "Chrysoberyl Quartz",
+        "Tourmaline Cat's Eye"
+      ],
+      "metal": "Silver or Panchdhatu",
+      "wear_finger": "Ring Finger or Little Finger",
+      "wear_day": "Tuesday or Thursday",
+      "wear_time": "Tuesday or Thursday morning at dawn during Shukla Paksha",
+      "weight_carats": "3.0 - 5.25 carats",
+      "mantra": "Om Stram Streem Stroum Sah Ketave Namah",
+      "vedic_mantras": {
+        "beej_mantra": "Om Stram Streem Stroum Sah Ketave Namah",
+        "nama_mantra": "Om Ketave Namah",
+        "gayatri_mantra": "Om Ashwadhwajaya Vidmahe Shoolahastaya Dhimahi Tanno Ketuh Prachodayat",
+        "recitation_count": 17000
+      },
+      "deity": "Lord Ganesha / Matsya Avatar / Goddess Durga",
+      "deities": [
+        "Lord Ganesha",
+        "Matsya Avatar",
+        "Goddess Durga",
+        "Ketu Dev"
+      ],
+      "rudraksha": "9 Mukhi (Nau Mukhi)",
+      "rudraksha_details": {
+        "mukhi": "9 Mukhi (Nau Mukhi - Maa Durga / Shakti)",
+        "ruling_planet": "Ketu",
+        "significance": "Enhances self-power, spiritual awakening, concentration, non-fear, and sharp intuitive insight while calming the nervous system."
+      },
+      "charity_items": [
+        "Seven grains mixture (Satnaja)",
+        "Two-tone (black & white) blankets",
+        "Sesame seeds",
+        "Mustard oil",
+        "Bananas"
+      ],
+      "charity_recipients": "Monks, ascetic spiritual seekers, ashrams, or shelter for abandoned animals",
+      "fasting_day": "Tuesday or Thursday",
+      "fasting_rules": "Fast on Tuesdays or Thursdays; offer worship and Modak to Lord Ganesha; break fast after dusk with fruits or simple satvik porridge.",
+      "positive_lifestyle_action": "Cultivate non-attachment to material status, practice silent meditation (Vipassana), support spiritual pilgrimages, and care for stray animals.",
+      "positive_lifestyle_actions": [
+        "Practice Vipassana or silent mindfulness meditation to hone inner intuition.",
+        "Foster philosophical non-attachment to transient material praises or losses.",
+        "Feed black-and-white stray dogs and care for injured animals.",
+        "Donate educational or medical assistance to disabled or underprivileged spiritual seekers."
+      ]
+    }
+  }
+}

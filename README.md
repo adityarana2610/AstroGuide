@@ -1,89 +1,180 @@
-# AstroGuide 🪐
+# AstroGuide
 
-**AI-powered Vedic astrology and Chaldean numerology assistant** — a LangChain
-tool-calling agent that computes sidereal birth charts and numerology numbers
-on demand.
+AstroGuide is a tool-augmented astrology and numerology assistant that combines deterministic calculations, a browser-based interface, and retrieval-augmented generation (RAG). The system keeps factual computation in Python tools and uses the RAG layer to explain results using indexed astrology knowledge and the user's saved profile and chart history.
 
-## Problem Statement
+> **Academic disclaimer:** AstroGuide is an educational software project. Its interpretations are for reflection and entertainment, not medical, legal, financial, or mental-health advice.
 
-Existing astrology apps are either fully manual or purely LLM-hallucinated.
-AstroGuide bridges the gap: real ephemeris calculations (Swiss Ephemeris /
-Lahiri ayanamsa) wired as *tools* to a Gemini 3.6 Flash agent, so every number in
-the report is computed, not generated.
+## What the Project Demonstrates
 
-## Quick Start
+- Deterministic birth-chart calculations using Swiss Ephemeris.
+- Numerology, gemstone, and colour recommendations backed by project tables.
+- Daily transit interpretation and auspicious-date search.
+- Ashtakoota/Guna Milan compatibility scoring.
+- A hybrid RAG pipeline combining dense retrieval, BM25, reciprocal-rank fusion, MMR diversification, reranking, and response synthesis.
+- A self-healing CRAG policy that can choose direct generation, query rewriting, or external search fallback.
+- Persistent profile information and generated chart history that are re-indexed as a user-specific RAG document.
+- A FastAPI backend and responsive static web UI with structured JSON responses and graceful error handling.
 
-```bash
-# 1. Clone & install
-git clone https://github.com/adityarana2610/AstroGuide.git
-cd AstroGuide
-pip install -r requirements.txt
+## Live Application
 
-# 2. Set your Google API key (never commit this)
-export GOOGLE_API_KEY="..."            # Linux / macOS
-set GOOGLE_API_KEY=...                 # Windows CMD
-$env:GOOGLE_API_KEY="..."              # PowerShell
+The application is served locally at:
 
-# 3. Run the demo notebook
-jupyter notebook notebooks/phase2_demo.ipynb
+```text
+http://127.0.0.1:8000
 ```
 
-## Project Structure
+The interface includes these workflows:
 
+1. **Birth Chart** - calculates a sidereal chart and renders the generated SVG.
+2. **Numbers & Stones** - returns numerological indicators and mapped recommendations.
+3. **Find Dates** - evaluates candidate dates using the project's astrological rules.
+4. **Daily Transits** - computes transit guidance against a natal Moon reference.
+5. **Compatibility** - calculates the Ashtakoota compatibility breakdown.
+6. **My Profile** - stores user details, notes, and the latest 20 generated results.
+7. **Ask AstroGuide** - answers questions using indexed domain knowledge and saved user context.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    U[User] --> UI[Static web UI]
+    UI --> API[FastAPI server]
+    API --> T[Deterministic astrology tools]
+    API --> P[Profile and chart history]
+    API --> RAG[Self-healing RAG agent]
+    P --> PD[User profile document]
+    RAG --> RET[Hybrid retriever]
+    RET --> CH[(ChromaDB)]
+    RET --> BM[BM25 index]
+    RAG --> LLM[Groq LLM or offline fallback]
+    RAG --> WEB[External search fallback]
+    T --> OUT[Structured JSON result]
+    LLM --> OUT
+    OUT --> UI
 ```
-astroguide/
-├── notebooks/phase2_demo.ipynb   # Interactive demo (Colab-friendly)
-├── src/
-│   ├── geocode.py                # Place → (UTC datetime, lat, lon, tz)
-│   ├── ephemeris.py              # Sidereal chart via pyswisseph
-│   ├── numerology.py             # Chaldean life path / name / birth numbers
-│   ├── tools.py                  # LangChain @tool wrappers
-│   ├── schemas.py                # Pydantic models for structured output
-│   └── agent.py                  # ReAct agent with MemorySaver
-├── data/planet_map.json          # Planet → number/stone/colour/day lookup
-├── requirements.txt
-└── README.md
+
+### Request flow
+
+1. The UI submits JSON to a typed FastAPI endpoint.
+2. The selected deterministic tool validates inputs and calculates structured facts.
+3. Successful tool results are archived in `data/user_profile.json`.
+4. The profile document is refreshed in the RAG collection when profile data changes.
+5. A RAG question is embedded and retrieved using semantic and lexical search.
+6. The agent selects a corrective action using LinUCB, synthesizes a grounded answer, and returns source metadata to the UI.
+
+### RAG pipeline
+
+The implementation in `astroguide/rag/pipeline/` uses:
+
+- `sentence-transformers/all-MiniLM-L6-v2` for 384-dimensional embeddings.
+- BM25 lexical retrieval for exact domain terms.
+- Reciprocal Rank Fusion to combine semantic and lexical rankings.
+- MMR to reduce redundant context.
+- An optional cross-encoder reranker.
+- Parent-child chunking so retrieval can return a larger explanatory section.
+- LinUCB action selection across direct generation, query rewrite, and external search.
+- Groq when `GROQ_API_KEY` is configured, with an offline response fallback otherwise.
+
+## API Surface
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/health` | Service health check. |
+| `POST` | `/api/birth_chart` | Generate a birth chart. |
+| `POST` | `/api/numbers_stones` | Calculate numerology and recommendations. |
+| `POST` | `/api/find_dates` | Find dates using the date-selection rules. |
+| `POST` | `/api/daily_transits` | Calculate daily transit guidance. |
+| `POST` | `/api/compatibility` | Calculate compatibility scoring. |
+| `GET` | `/api/profile` | Read the saved profile and chart history. |
+| `PUT` | `/api/profile` | Update profile details and notes. |
+| `POST` | `/api/profile/charts` | Save a generated tool result. |
+| `POST` | `/api/rag` | Ask a grounded question over indexed knowledge. |
+
+All tool endpoints return a consistent shape:
+
+```json
+{
+  "success": true,
+  "data": {}
+}
 ```
 
-## Phase 2 Scope
+Failures return `success: false` and an explanatory `error` field.
 
-| Feature | Status |
-|---------|--------|
-| Vedic birth chart (sidereal, Lahiri) | ✅ Working |
-| Chaldean numerology (life path, birth #, name #) | ✅ Working |
-| LangChain tool-calling agent | ✅ Working |
-| Conversation memory (MemorySaver) | ✅ Working |
-| Pydantic structured output (`ChartSummary`) | ✅ Working |
-| Detailed interpretive report | 🔜 Phase 3 |
-| Compatibility analysis | 🔜 Phase 3 |
-| PDF/chart export | 🔜 Phase 3 |
+## Installation and Usage
 
-## Environment Variable
+### 1. Create or activate the virtual environment
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `GOOGLE_API_KEY` | Yes | Google AI API key for Gemini 3.6 Flash (free tier) |
+PowerShell on Windows:
 
-## How the Demo Works
+```powershell
+python -m venv .venv
+& ".\\.venv\\Scripts\\Activate.ps1"
+```
 
-1. The notebook sends a natural-language question to the agent.
-2. The agent autonomously decides which tools to call (`get_birth_chart`,
-   `get_numbers_and_stones`, or both).
-3. Tool results are real computations — not LLM hallucinations.
-4. The raw `messages` trace is printed so you can see the `tool_calls` entries
-   as proof.
-5. A final cell demonstrates Pydantic-parsed structured output.
+### 2. Install dependencies
 
-## Data Sources & Conventions
+```powershell
+python -m pip install -r AstroGuide\\requirements.txt
+```
 
-- **Ephemeris**: Swiss Ephemeris (`pyswisseph`), sidereal mode, Lahiri ayanamsa.
-- **Numerology**: Chaldean letter-value system (no 9 assigned to letters;
-  however the digit 9 can still appear as a final reduced number, ruled by Mars).
-- **Planet map**: `data/planet_map.json` — verified against the following sources:
-  - **Gemstones**: [GemPundit — "Know your Gemstone According to Vedic Astrology"](https://gempundit.com/blog/gemstones-of-vedic-astrology) (all 9 Navaratna stones confirmed).
-  - **Number-to-planet**: [Dr. J C Chaudhry — Chaldean Numerology Chart](https://jcchaudhry.com/chaldean-numerology-chart). Numbers 4 and 7 use the **Vedic convention** (Rahu/Ketu) instead of the Western outer planets (Uranus/Neptune).
-  - **Colours & days**: Vedic Color Therapy / Navagraha associations (standard references).
+### 3. Optional: configure Groq
 
-## License
+Create a `.env` file in `AstroGuide/` if LLM-powered synthesis and query rewriting are desired:
 
-MIT
+```text
+GROQ_API_KEY=your_key_here
+```
+
+The application still provides an offline fallback when the key is absent or the API is unavailable.
+
+### 4. Start the server
+
+```powershell
+Set-Location AstroGuide
+python -m uvicorn server:app --host 127.0.0.1 --port 8000
+```
+
+Then open `http://127.0.0.1:8000` in a browser.
+
+The first RAG request may download the embedding and reranker models. Subsequent requests reuse the local models and persistent Chroma collection.
+
+## Project Layout
+
+```text
+AstroGuide/
+|-- server.py                         FastAPI application and API routes
+|-- main.py                           Standalone CRAG demonstration
+|-- astroguide/tools/                 Deterministic astrology tools
+|-- astroguide/rag/pipeline/          Ingestion, retrieval, policy, and synthesis
+|-- data/tables/                      Astrology and numerology lookup tables
+|-- data/user_profile.json            Local profile and generated-result history
+|-- static/index.html                 Web interface markup
+|-- static/script.js                  Form submission and result rendering
+|-- static/style.css                  Interface styling
+|-- tests/                             Regression and behavioral tests
+|-- TECHNICAL_REPORT.md                Detailed engineering report
+`-- requirements.txt                   Python dependencies
+```
+
+## Testing
+
+Run the repository verification runner after installing dependencies:
+
+```powershell
+python AstroGuide\\test_reproduction.py
+```
+
+The tests cover standalone imports, API error wrapping, input boundaries, compatibility scoring, numerology data, SVG retrograde markers, and dependency declarations. A focused server check is also useful:
+
+```powershell
+python -c "import sys; sys.path.insert(0, 'AstroGuide'); import server; print(server.health_check())"
+```
+
+## Privacy and Responsible Use
+
+Profile details and generated results are stored locally in `data/user_profile.json` and are included in the user-specific RAG document. Do not commit personal profile data or API keys. The application should be extended with authentication, encryption, retention controls, and per-user storage before deployment beyond a local academic demonstration.
+
+## Technical Documentation
+
+See [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md) for the problem definition, design rationale, implementation details, evaluation approach, limitations, and future work.

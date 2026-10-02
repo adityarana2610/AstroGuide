@@ -1,0 +1,672 @@
+{
+  "metadata": {
+    "name": "Panchang Reference Dataset",
+    "version": "1.0.0",
+    "description": "Classical Vedic Panchang and Muhurtha reference tables covering 30 Tithis, 9 Taras, 11 Karanas, 27 Nitya Yogas, Rahu Kalam schedules, and Muhurtha action recommendations.",
+    "sources": [
+      "Surya Siddhanta",
+      "Brihat Parashara Hora Shastra",
+      "Swiss Ephemeris (Moshier / Lahiri)",
+      "Astrology MCP basic_panchang service"
+    ],
+    "author": "AstroGuide Engineering Team",
+    "feature_id": "F2"
+  },
+  "tithis": [
+    {
+      "number": 1,
+      "name": "Pratipada",
+      "paksha": "Shukla",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Agni",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Religious rituals", "Householder duties", "Domestic ceremonies", "Lighting sacred fires"],
+      "inauspicious_activities": ["Major material investments", "Long distance travel", "Marriage"],
+      "description": "First lunar day of the waxing moon. Ruled by Agni; carries moderate energy suited for spiritual and purification rites."
+    },
+    {
+      "number": 2,
+      "name": "Dwitiya",
+      "paksha": "Shukla",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Brahma",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Laying foundation stones", "Weddings", "Entering new residence (Griha Pravesha)", "Commercial ventures", "Government meetings"],
+      "inauspicious_activities": ["Aggressive confrontations", "Litigation"],
+      "description": "Highly auspicious Bhadra tithi ruled by Lord Brahma. Excellent for constructive, creative, and family milestones."
+    },
+    {
+      "number": 3,
+      "name": "Tritiya",
+      "paksha": "Shukla",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Gauri",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Akshaya Tritiya initiatives", "Artistic creations", "Hair cutting and grooming", "Signing contracts", "Musical training"],
+      "inauspicious_activities": ["Harsh or violent actions"],
+      "description": "Victorious Jaya tithi ruled by Goddess Gauri. Known for enduring prosperity, aesthetic elegance, and auspicious beginnings."
+    },
+    {
+      "number": 4,
+      "name": "Chaturthi",
+      "paksha": "Shukla",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Ganesha",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Lord Ganesha worship", "Obstacle removal rites", "Demolition of old structures", "Warfare and defense"],
+      "inauspicious_activities": ["Marriage", "Travel", "Signing long-term financial agreements", "New business launches"],
+      "description": "Rikta (empty) tithi ruled by Saturn. Inauspicious for worldly ventures; dedicated to Ganesha worship for overcoming hurdles."
+    },
+    {
+      "number": 5,
+      "name": "Panchami",
+      "paksha": "Shukla",
+      "category": "Poorna",
+      "category_ruler": "Jupiter",
+      "deity": "Nagas",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Administering medicine", "Surgeries", "Academic enrollment", "Marriage", "Long-term investments", "Puja to serpent deities"],
+      "inauspicious_activities": ["Borrowing money", "Debt transactions"],
+      "description": "Full Poorna tithi ruled by Jupiter. Brings expansive healing, intellectual advancement, and marital harmony."
+    },
+    {
+      "number": 6,
+      "name": "Shashthi",
+      "paksha": "Shukla",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Kartikeya",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Physical training", "Athletic contests", "Medical treatments", "Wearing new jewels", "Building alliances"],
+      "inauspicious_activities": ["Oil massage", "Distant travel by water"],
+      "description": "Nanda tithi ruled by Kartikeya. Possesses vigorous martial energy suited for courage, leadership, and health therapies."
+    },
+    {
+      "number": 7,
+      "name": "Saptami",
+      "paksha": "Shukla",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Surya",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Purchasing vehicles", "Starting journeys", "Surya worship", "Embarking on political or executive initiatives", "Music and dance"],
+      "inauspicious_activities": ["Confinement", "Entering restrictive agreements"],
+      "description": "Auspicious Bhadra tithi ruled by Sun God Surya. Illuminates professional vitality, travel, and public honors."
+    },
+    {
+      "number": 8,
+      "name": "Ashtami",
+      "paksha": "Shukla",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Shiva / Durga",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Durga worship", "Spiritual austerities", "Fasting", "Defensive maneuvers", "Weapons training"],
+      "inauspicious_activities": ["Marriage", "Entering new houses", "Major commercial purchases", "Pleasure trips"],
+      "description": "Challenging Jaya tithi with sharp transformative energy. Traditionally avoided for major worldly ventures; potent for Devi worship."
+    },
+    {
+      "number": 9,
+      "name": "Navami",
+      "paksha": "Shukla",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Durga",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Overcoming enemies", "Legal disputes", "Demolition", "Hunting", "Spiritual sadhana"],
+      "inauspicious_activities": ["Weddings", "Travel", "Starting construction", "Financial partnerships"],
+      "description": "Rikta (empty) tithi ruled by Saturn. Inauspicious for gentle creative affairs; optimal for resolving conflicts and cutting ties."
+    },
+    {
+      "number": 10,
+      "name": "Dashami",
+      "paksha": "Shukla",
+      "category": "Poorna",
+      "category_ruler": "Jupiter",
+      "deity": "Yama / Dharma",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Coronations and promotions", "Entering public office", "Weddings", "Buying vehicles and property", "Pilgrimages"],
+      "inauspicious_activities": ["Deceitful or clandestine activities"],
+      "description": "Supreme Poorna tithi ruled by Dharma. Bestows victory, leadership recognition, civic honour, and enduring success."
+    },
+    {
+      "number": 11,
+      "name": "Ekadashi",
+      "paksha": "Shukla",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Vishvedevas / Vishnu",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Fasting", "Vishnu worship", "Spiritual devotion", "Philanthropic charity", "Meditation retreats"],
+      "inauspicious_activities": ["Heavy material consumerism", "Indulgence in sensory pleasures"],
+      "description": "Highly auspicious spiritual tithi. Promotes clarity of mind, karmic cleansing, and lasting divine blessings."
+    },
+    {
+      "number": 12,
+      "name": "Dwadashi",
+      "paksha": "Shukla",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Vishnu",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Fulfilling religious vows", "Planting gardens", "Intellectual study", "Breaking Ekadashi fast at auspicious hora"],
+      "inauspicious_activities": ["Oil baths", "Renovating homes"],
+      "description": "Moderate Bhadra tithi ruled by Mercury. Conducive for scholarly pursuits, vow fulfillment, and peaceful domestic chores."
+    },
+    {
+      "number": 13,
+      "name": "Trayodashi",
+      "paksha": "Shukla",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Kamadeva",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Pradosham Shiva worship", "Cultivating friendships", "Romantic unions", "Wearing fine apparel", "Artistic exhibitions"],
+      "inauspicious_activities": ["Harsh speech", "Aggressive confrontations"],
+      "description": "Victorious Jaya tithi ruled by Kamadeva. Overflowing with joy, sensual grace, social harmony, and spiritual redemption."
+    },
+    {
+      "number": 14,
+      "name": "Chaturdashi",
+      "paksha": "Shukla",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Shiva / Rudra",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Shiva worship", "Tantric disciplines", "Neutralizing toxins and poisons", "Spiritual introspection"],
+      "inauspicious_activities": ["Weddings", "Travel", "Business inaugurations", "Purchasing real estate"],
+      "description": "Rikta tithi ruled by Saturn. Inauspicious for worldly celebrations; potent for rigorous meditation and overcoming deep fears."
+    },
+    {
+      "number": 15,
+      "name": "Purnima",
+      "paksha": "Shukla",
+      "category": "Poorna",
+      "category_ruler": "Jupiter",
+      "deity": "Chandra / Satyanarayan",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Satyanarayan Katha", "Spiritual festivals", "Charitable feeding", "Meditation and mantra chanting", "Peace treaties"],
+      "inauspicious_activities": ["Aggressive surgery", "Risky physical ventures"],
+      "description": "The Full Moon. Peak Poorna tithi brimming with radiant soma. Magnificent for spiritual illumination, celebrations, and goodwill."
+    },
+    {
+      "number": 16,
+      "name": "Pratipada",
+      "paksha": "Krishna",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Agni",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Routine domestic chores", "Consolidation of past efforts", "Subtle energy work", "Spiritual studies"],
+      "inauspicious_activities": ["Extravagant celebrations", "Beginning high-risk financial ventures"],
+      "description": "First tithi of the waning moon. Suitable for gradual winding down, quiet analysis, and routine persistence."
+    },
+    {
+      "number": 17,
+      "name": "Dwitiya",
+      "paksha": "Krishna",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Brahma",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Government work", "Commercial negotiations", "Intellectual study", "Purchasing practical assets"],
+      "inauspicious_activities": ["Unlawful acts", "Speculation"],
+      "description": "Auspicious waning Bhadra tithi. Fosters dependable business dealings, organizational planning, and educational research."
+    },
+    {
+      "number": 18,
+      "name": "Tritiya",
+      "paksha": "Krishna",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Gauri",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Entering houses", "Competitive achievements", "Sculpture and artisanal crafts", "Physical discipline"],
+      "inauspicious_activities": ["Passive procrastination"],
+      "description": "Jaya tithi ruled by Gauri. Carries steady momentum for competitive activities, artisanal crafts, and building stamina."
+    },
+    {
+      "number": 19,
+      "name": "Chaturthi",
+      "paksha": "Krishna",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Ganesha / Sankashti",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Sankashti Chaturthi fasting", "Moonrise Ganesha puja", "Debt elimination", "Overcoming adversaries"],
+      "inauspicious_activities": ["Weddings", "New commercial contracts", "Travel"],
+      "description": "Rikta tithi ruled by Saturn. Avoid worldly celebrations; ideal for Sankashti Chaturthi fast to dissolve mounting debts and grief."
+    },
+    {
+      "number": 20,
+      "name": "Panchami",
+      "paksha": "Krishna",
+      "category": "Poorna",
+      "category_ruler": "Jupiter",
+      "deity": "Nagas",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Healing therapies", "Scientific research", "Spiritual initiation", "Managerial administration"],
+      "inauspicious_activities": ["Extravagant gambling"],
+      "description": "Poorna tithi ruled by Jupiter. Well-favored for restorative healthcare, structured governance, and educational development."
+    },
+    {
+      "number": 21,
+      "name": "Shashthi",
+      "paksha": "Krishna",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Kartikeya",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Martial arts", "Defensive planning", "Physical exercises", "Subduing competitors"],
+      "inauspicious_activities": ["Domestic disputes", "Signing fragile peace pacts"],
+      "description": "Neutral Nanda tithi ruled by Kartikeya. Good for energetic tasks requiring willpower, grit, and physical effort."
+    },
+    {
+      "number": 22,
+      "name": "Saptami",
+      "paksha": "Krishna",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Surya",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Buying conveyances", "Short business journeys", "Physical therapies", "Surya mantra sadhana"],
+      "inauspicious_activities": ["Cruel speech", "Betraying confidences"],
+      "description": "Auspicious Bhadra tithi ruled by Surya. Provides stable solar energy for transport, administrative matters, and vitality."
+    },
+    {
+      "number": 23,
+      "name": "Ashtami",
+      "paksha": "Krishna",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Bhairava / Krishna",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Kala Ashtami Bhairava puja", "Spiritual austerities", "Protection rituals", "Dissolving negativity"],
+      "inauspicious_activities": ["Marriage", "House warming", "Inaugurations", "Celebrations"],
+      "description": "Inauspicious worldly tithi with intense, severe energy. Revered for Kala Bhairava puja and shedding stubborn negative habits."
+    },
+    {
+      "number": 24,
+      "name": "Navami",
+      "paksha": "Krishna",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Durga",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Litigation preparation", "Demolition", "Overcoming adversaries", "Spiritual purification"],
+      "inauspicious_activities": ["Weddings", "Entering partnerships", "Starting journeys"],
+      "description": "Rikta tithi ruled by Saturn. Inauspicious for gentle beginnings; suitable for resolute boundary setting and conflict resolution."
+    },
+    {
+      "number": 25,
+      "name": "Dashami",
+      "paksha": "Krishna",
+      "category": "Poorna",
+      "category_ruler": "Jupiter",
+      "deity": "Yama",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Civic administration", "Legal strategy", "Spiritual learning", "Organizing business processes"],
+      "inauspicious_activities": ["Indecisive hesitation"],
+      "description": "Poorna tithi ruled by Jupiter. Well-suited for principled governance, strategic realignments, and educational study."
+    },
+    {
+      "number": 26,
+      "name": "Ekadashi",
+      "paksha": "Krishna",
+      "category": "Nanda",
+      "category_ruler": "Venus",
+      "deity": "Vishnu",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Fasting (Vrat)", "Vishnu devotion", "Charity to the needy", "Silence and meditation"],
+      "inauspicious_activities": ["Heavy meals", "Material vanity", "Gossip"],
+      "description": "Sacred Krishna Ekadashi. Purifies bodily and spiritual sheaths through fasting, prayer, and selfless humanitarian deeds."
+    },
+    {
+      "number": 27,
+      "name": "Dwadashi",
+      "paksha": "Krishna",
+      "category": "Bhadra",
+      "category_ruler": "Mercury",
+      "deity": "Vishnu",
+      "is_shubh": false,
+      "score": 0,
+      "auspicious_activities": ["Breaking Ekadashi fast (Parana)", "Charitable feeding", "Scriptural study", "Internal accounting"],
+      "inauspicious_activities": ["Confrontational debates", "Risky travel"],
+      "description": "Moderate Bhadra tithi ruled by Mercury. Promotes peaceful introspection, settling accounts, and gentle charitable deeds."
+    },
+    {
+      "number": 28,
+      "name": "Trayodashi",
+      "paksha": "Krishna",
+      "category": "Jaya",
+      "category_ruler": "Mars",
+      "deity": "Shiva / Pradosham",
+      "is_shubh": true,
+      "score": 2,
+      "auspicious_activities": ["Pradosham fasting and puja", "Seeking reconciliation", "Healing treatments", "Deep spiritual study"],
+      "inauspicious_activities": ["Harsh retaliatory actions"],
+      "description": "Auspicious Jaya tithi before the dark moon. Holy Pradosham window for washing away karmic debts and receiving Shiva's grace."
+    },
+    {
+      "number": 29,
+      "name": "Chaturdashi",
+      "paksha": "Krishna",
+      "category": "Rikta",
+      "category_ruler": "Saturn",
+      "deity": "Shiva / Kali",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Masa Shivaratri meditation", "Kali puja", "Renunciation", "Fasting", "Detoxification"],
+      "inauspicious_activities": ["Weddings", "Travel", "Business launches", "Celebrations"],
+      "description": "Rikta tithi ruled by Saturn. Highly challenging for mundane affairs; supreme night for Shivaratri meditation and self-mastery."
+    },
+    {
+      "number": 30,
+      "name": "Amavasya",
+      "paksha": "Krishna",
+      "category": "Poorna",
+      "category_ruler": "Rahu / Saturn",
+      "deity": "Pitris (Ancestors)",
+      "is_shubh": false,
+      "score": -2,
+      "auspicious_activities": ["Pitru Tarpana", "Ancestor memorial rites", "Charity of food to poor", "Deep meditation", "Silence (Mauna)"],
+      "inauspicious_activities": ["Weddings", "Griha Pravesha", "Initiating business", "Signing contracts", "Buying new vehicles"],
+      "description": "The New Moon. The lunar disc is absent; rays turn inward. Worldly muhurthas strictly avoided; consecrated for honoring departed ancestors."
+    }
+  ],
+  "taras": [
+    {
+      "number": 1,
+      "name": "Janma",
+      "sanskrit_name": "जन्म",
+      "english_meaning": "Birth / Origin",
+      "score": -1,
+      "is_favourable": false,
+      "description": "Pertains to physical body, self, and health. High sensitivity to bodily vulnerability. Favorable for personal introspection and spiritual rites, but best to avoid medical surgeries or strenuous journeys.",
+      "recommended_actions": ["Rest", "Meditation", "Routine tasks", "Health self-care"],
+      "avoid_actions": ["Surgeries", "High-speed travel", "Risky financial speculations"]
+    },
+    {
+      "number": 2,
+      "name": "Sampat",
+      "sanskrit_name": "सम्पत्",
+      "english_meaning": "Wealth / Prosperity",
+      "score": 1,
+      "is_favourable": true,
+      "description": "Brings wealth, financial abundance, and commercial prosperity. Extremely auspicious for business inaugurations, purchasing assets, signing agreements, and banking.",
+      "recommended_actions": ["Starting businesses", "Investments", "Purchasing real estate", "Trading", "Financial planning"],
+      "avoid_actions": ["None; highly beneficial for commercial progress"]
+    },
+    {
+      "number": 3,
+      "name": "Vipat",
+      "sanskrit_name": "विपत्",
+      "english_meaning": "Misfortune / Obstacle",
+      "score": -1,
+      "is_favourable": false,
+      "description": "Indicates unexpected obstacles, accidents, financial leakage, and misunderstandings. Great caution needed in all dealings.",
+      "recommended_actions": ["Prudent consolidation", "Quiet work", "Spiritual remedies", "Staying vigilant"],
+      "avoid_actions": ["Major contracts", "Travel", "Lending money", "Starting critical projects"]
+    },
+    {
+      "number": 4,
+      "name": "Kshema",
+      "sanskrit_name": "क्षेम",
+      "english_meaning": "Well-being / Security",
+      "score": 1,
+      "is_favourable": true,
+      "description": "Fosters safety, well-being, domestic peace, and smooth execution. Favorable for family celebrations, entering homes, signing contracts, and recovery from illness.",
+      "recommended_actions": ["Entering a new home", "Family gatherings", "Medical cures", "Contract signing", "Educational learning"],
+      "avoid_actions": ["Unnecessary discord"]
+    },
+    {
+      "number": 5,
+      "name": "Pratyari",
+      "sanskrit_name": "प्रत्यरि",
+      "english_meaning": "Opposition / Rivalry",
+      "score": -1,
+      "is_favourable": false,
+      "description": "Symbolizes enemies, confrontations, counter-actions, and friction. Unfavorable for diplomacy, partnership formation, or delicate negotiations.",
+      "recommended_actions": ["Defensive fortifications", "Subdued work", "Conflict avoidance", "Meditation"],
+      "avoid_actions": ["Legal filings", "Confrontational meetings", "Entering new partnerships"]
+    },
+    {
+      "number": 6,
+      "name": "Sadhaka",
+      "sanskrit_name": "साधक",
+      "english_meaning": "Accomplishment / Success",
+      "score": 1,
+      "is_favourable": true,
+      "description": "Brings achievement, goal realization, academic success, and fulfillment of ambitions. Excellent for high-level meetings, exams, and spiritual milestones.",
+      "recommended_actions": ["Launching ambitious projects", "Academic exams", "Spiritual initiation", "Strategic presentations"],
+      "avoid_actions": ["Procrastination"]
+    },
+    {
+      "number": 7,
+      "name": "Vadha",
+      "sanskrit_name": "वध",
+      "english_meaning": "Destruction / Severe Danger",
+      "score": -1,
+      "is_favourable": false,
+      "description": "Also known as Naidhana. The most malefic tara in Jyotish. Danger of severe loss, breakdown, and mortal failure. Strictly avoid major initiatives.",
+      "recommended_actions": ["Total low profile", "Fasting", "Surrender to divine will", "Neutral routine work"],
+      "avoid_actions": ["All major worldly beginnings", "Travel", "Surgery", "Signing covenants"]
+    },
+    {
+      "number": 8,
+      "name": "Mitra",
+      "sanskrit_name": "मित्र",
+      "english_meaning": "Friend / Alliance",
+      "score": 1,
+      "is_favourable": true,
+      "description": "Promotes harmony, friendly assistance, enjoyable social gatherings, and reliable alliances. Favorable for romantic commitments, networking, and joint ventures.",
+      "recommended_actions": ["Networking", "Social events", "Collaborations", "Creative arts", "Friendship gatherings"],
+      "avoid_actions": ["Isolation", "Antisocial behaviour"]
+    },
+    {
+      "number": 9,
+      "name": "Ati-Mitra",
+      "sanskrit_name": "अतिमित्र",
+      "english_meaning": "Intimate Friend / Deep Alliance",
+      "score": 1,
+      "is_favourable": true,
+      "description": "Extremely favorable tara bringing intense goodwill, extraordinary cooperation, deep affection, and unyielding support.",
+      "recommended_actions": ["Weddings", "Long-term covenants", "Pivotal negotiations", "Receiving mentorship", "Spiritual devotion"],
+      "avoid_actions": ["None; universally protective and friendly"]
+    }
+  ],
+  "muhurtha_actions": {
+    "composite_brackets": {
+      "highly_auspicious": {
+        "min_score": 2,
+        "max_score": 4,
+        "label": "Highly Auspicious",
+        "description": "All three pillars (Tithi, Chandrabala, Tarabala) are in harmonious alignment. Optimal cosmic support.",
+        "action_templates": [
+          "An excellent day for new beginnings and important decisions.",
+          "Ideal for initiating long-term projects and signing contracts.",
+          "A wonderful time for celebrations and significant purchases.",
+          "Great for starting new educational pursuits or investments.",
+          "Favorable for important meetings and spiritual practices."
+        ],
+        "favoured_activities": [
+          "Weddings and engagements",
+          "Griha Pravesha (house warming)",
+          "Commercial company launches",
+          "Property and vehicle acquisitions",
+          "Signing binding agreements",
+          "Major medical procedures (avoiding Rahu Kalam)"
+        ]
+      },
+      "neutral": {
+        "min_score": -1,
+        "max_score": 1,
+        "label": "Neutral / Moderate",
+        "description": "A mixed balance of celestial forces. Suitable for regular everyday affairs without extraordinary risks.",
+        "action_templates": [
+          "A good day for routine tasks and personal reflection.",
+          "Focus on maintaining current projects and steady progress.",
+          "Ideal for organizing, planning, and consolidating resources.",
+          "Favorable for catching up on administrative work.",
+          "A suitable day for quiet work and attending to details."
+        ],
+        "favoured_activities": [
+          "Backlog clearance",
+          "Internal organizational audits",
+          "Study and skill refinement",
+          "Maintenance and housekeeping",
+          "Quiet contemplation"
+        ]
+      },
+      "inauspicious_avoid": {
+        "min_score": -4,
+        "max_score": -2,
+        "label": "Inauspicious / Avoid",
+        "description": "Severe conflicting energies across Tithi, Chandrabala, and Tarabala. Postpone major milestones.",
+        "action_templates": [
+          "Focus on completing ongoing projects and nurturing relationships.",
+          "Best to avoid major new initiatives today.",
+          "A day for reflection, meditation, and finishing pending tasks.",
+          "Exercise caution in financial dealings and travel.",
+          "Keep a low profile and avoid aggressive moves."
+        ],
+        "activities_to_avoid": [
+          "New financial commitments",
+          "Inaugurations of businesses",
+          "Signing contracts",
+          "Long-distance travel",
+          "Confrontational debates",
+          "Major celebrations"
+        ]
+      }
+    },
+    "rahu_kalam_rules": {
+      "duration_minutes": 90,
+      "base_calculation": "Daytime divided into 8 equal parts of approximately 90 minutes each between 06:00 and 18:00.",
+      "weekly_periods": [
+        {
+          "weekday_index": 0,
+          "weekday_name": "Monday",
+          "period_number": 2,
+          "start_time_standard": "07:30",
+          "end_time_standard": "09:00"
+        },
+        {
+          "weekday_index": 1,
+          "weekday_name": "Tuesday",
+          "period_number": 7,
+          "start_time_standard": "15:00",
+          "end_time_standard": "16:30"
+        },
+        {
+          "weekday_index": 2,
+          "weekday_name": "Wednesday",
+          "period_number": 5,
+          "start_time_standard": "12:00",
+          "end_time_standard": "13:30"
+        },
+        {
+          "weekday_index": 3,
+          "weekday_name": "Thursday",
+          "period_number": 6,
+          "start_time_standard": "13:30",
+          "end_time_standard": "15:00"
+        },
+        {
+          "weekday_index": 4,
+          "weekday_name": "Friday",
+          "period_number": 4,
+          "start_time_standard": "10:30",
+          "end_time_standard": "12:00"
+        },
+        {
+          "weekday_index": 5,
+          "weekday_name": "Saturday",
+          "period_number": 3,
+          "start_time_standard": "09:00",
+          "end_time_standard": "10:30"
+        },
+        {
+          "weekday_index": 6,
+          "weekday_name": "Sunday",
+          "period_number": 8,
+          "start_time_standard": "16:30",
+          "end_time_standard": "18:00"
+        }
+      ],
+      "proscription": "Strictly avoid commencing any auspicious deed, travel, medical procedure, or contract signing during Rahu Kalam."
+    }
+  },
+  "karanas": [
+    {"index": 0, "name": "Bava", "type": "Chara (Movable)", "ruler": "Sun", "deity": "Indra", "is_auspicious": true, "nature": "Promotes health, army strength, statecraft, and public achievements."},
+    {"index": 1, "name": "Balava", "type": "Chara (Movable)", "ruler": "Moon", "deity": "Brahma", "is_auspicious": true, "nature": "Auspicious for sacred ceremonies, rituals, and learning."},
+    {"index": 2, "name": "Kaulava", "type": "Chara (Movable)", "ruler": "Mars", "deity": "Mitra", "is_auspicious": true, "nature": "Bestows friendship, partnerships, romance, and artistic endeavours."},
+    {"index": 3, "name": "Taitila", "type": "Chara (Movable)", "ruler": "Mercury", "deity": "Aryaman", "is_auspicious": true, "nature": "Favorable for construction, securing positions, buying homes."},
+    {"index": 4, "name": "Garija", "type": "Chara (Movable)", "ruler": "Jupiter", "deity": "Bhaga", "is_auspicious": true, "nature": "Excellent for agriculture, planting, commerce, and laying foundations."},
+    {"index": 5, "name": "Vanija", "type": "Chara (Movable)", "ruler": "Venus", "deity": "Manibhadra", "is_auspicious": true, "nature": "Supreme for trade, financial transactions, and merchant agreements."},
+    {"index": 6, "name": "Vishti", "type": "Chara (Movable)", "ruler": "Saturn", "deity": "Yama", "is_auspicious": false, "nature": "Also known as Bhadra. Strictly inauspicious for worldly beginnings; suited for warfare and defense."},
+    {"index": 7, "name": "Shakuni", "type": "Sthira (Fixed)", "ruler": "Rahu", "deity": "Kali", "is_auspicious": false, "nature": "Fixed karana. Suitable for administering medicine, remedies, and occult disciplines."},
+    {"index": 8, "name": "Chatushpada", "type": "Sthira (Fixed)", "ruler": "Jupiter", "deity": "Vrishabha", "is_auspicious": false, "nature": "Fixed karana. Favorable for ancestral shraddha, cattle welfare, and state actions."},
+    {"index": 9, "name": "Naga", "type": "Sthira (Fixed)", "ruler": "Ketu", "deity": "Sarpa", "is_auspicious": false, "nature": "Fixed karana. Destructive energy; suitable only for subduing enemies and boundary disputes."},
+    {"index": 10, "name": "Kintughna", "type": "Sthira (Fixed)", "ruler": "Venus", "deity": "Vayu", "is_auspicious": true, "nature": "Fixed karana. Brings joy, auspicious deeds, charity, and religious sacrifice."}
+  ],
+  "nitya_yogas": [
+    {"index": 1, "name": "Vishkambha", "is_auspicious": false, "meaning": "Supported / Door Bolt", "effect": "Creates initial obstructions; requires persistence."},
+    {"index": 2, "name": "Priti", "is_auspicious": true, "meaning": "Affection / Love", "effect": "Fosters goodwill, mutual affection, and happy social gatherings."},
+    {"index": 3, "name": "Ayushman", "is_auspicious": true, "meaning": "Long Life", "effect": "Bestows longevity, enduring health, and sustainable growth."},
+    {"index": 4, "name": "Saubhagya", "is_auspicious": true, "meaning": "Good Fortune", "effect": "Brings auspicious fortune, marital felicity, and prosperity."},
+    {"index": 5, "name": "Shobhana", "is_auspicious": true, "meaning": "Splendor", "effect": "Grants aesthetic beauty, artistic flair, and bright prospects."},
+    {"index": 6, "name": "Atiganda", "is_auspicious": false, "meaning": "Great Obstacle", "effect": "Severe complications; avoid major new ventures."},
+    {"index": 7, "name": "Sukarma", "is_auspicious": true, "meaning": "Virtuous Deeds", "effect": "Supreme for righteous actions, charity, and noble enterprise."},
+    {"index": 8, "name": "Dhriti", "is_auspicious": true, "meaning": "Steadfastness", "effect": "Grants patience, moral courage, and stability."},
+    {"index": 9, "name": "Shoola", "is_auspicious": false, "meaning": "Thorn / Spear", "effect": "Sharp discord, pain, and conflict; avoid surgeries and travel."},
+    {"index": 10, "name": "Ganda", "is_auspicious": false, "meaning": "Danger Knot", "effect": "Challenging conditions; beware of deceit and mishaps."},
+    {"index": 11, "name": "Vriddhi", "is_auspicious": true, "meaning": "Expansion / Growth", "effect": "Multiplies prosperity, wealth, and intellectual progress."},
+    {"index": 12, "name": "Dhruva", "is_auspicious": true, "meaning": "Constant / Fixed", "effect": "Excellent for long-term construction, agreements, and coronation."},
+    {"index": 13, "name": "Vyaghata", "is_auspicious": false, "meaning": "Striking / Violent", "effect": "Fierce destructive potential; avoid all peaceful ventures."},
+    {"index": 14, "name": "Harshana", "is_auspicious": true, "meaning": "Jubilation", "effect": "Generates cheerfulness, celebration, and creative success."},
+    {"index": 15, "name": "Vajra", "is_auspicious": false, "meaning": "Thunderbolt", "effect": "Harsh, unyielding power; unfavorable for gentle ceremonies."},
+    {"index": 16, "name": "Siddhi", "is_auspicious": true, "meaning": "Fulfillment / Mastery", "effect": "Bestows accomplishment of goals, spiritual powers, and wealth."},
+    {"index": 17, "name": "Vyatipata", "is_auspicious": false, "meaning": "Calamity / Turmoil", "effect": "Highly inauspicious for worldly beginnings; suited for meditation."},
+    {"index": 18, "name": "Variyan", "is_auspicious": true, "meaning": "Superiority / Comfort", "effect": "Encourages luxury, contentment, and high status."},
+    {"index": 19, "name": "Parigha", "is_auspicious": false, "meaning": "Iron Bar / Barrier", "effect": "Encountering resistance; first half is especially afflicted."},
+    {"index": 20, "name": "Shiva", "is_auspicious": true, "meaning": "Benevolent / Pure", "effect": "Deeply auspicious for spiritual wisdom, healing, and peace."},
+    {"index": 21, "name": "Siddha", "is_auspicious": true, "meaning": "Perfected", "effect": "Auspicious for religious rituals, learning, and craftsmanship."},
+    {"index": 22, "name": "Sadhya", "is_auspicious": true, "meaning": "Achievable", "effect": "Fosters cooperative success and steady progress."},
+    {"index": 23, "name": "Shubha", "is_auspicious": true, "meaning": "Pure / Auspicious", "effect": "Magnificent for weddings, business, and auspicious ceremonies."},
+    {"index": 24, "name": "Shukla", "is_auspicious": true, "meaning": "Luminous / Bright", "effect": "Promotes clear insight, truthfulness, and vitality."},
+    {"index": 25, "name": "Brahma", "is_auspicious": true, "meaning": "Divine / Creator", "effect": "Superlative for intellectual and spiritual wisdom."},
+    {"index": 26, "name": "Indra", "is_auspicious": true, "meaning": "Chief / Executive", "effect": "Brings leadership respect, executive promotions, and power."},
+    {"index": 27, "name": "Vaidhriti", "is_auspicious": false, "meaning": "Divisive / Discord", "effect": "Chaotic energies; avoid commencing material ventures."}
+  ]
+}
